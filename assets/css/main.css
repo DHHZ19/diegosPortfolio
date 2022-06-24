@@ -192,7 +192,9 @@ input, select, textarea {
 			color: inherit;
 			text-decoration: none;
 		}
-
+	.image.main img{
+		justify-content: center;
+	}
 	h1 {
 		font-size: 4rem;
 		line-height: 1.1;
@@ -2682,7 +2684,7 @@ input, select, textarea {
 			}
 
 			.image.main img {
-				width: 100%;
+				width: 55%;
 			}
 
 		@media screen and (max-width: 736px) {
