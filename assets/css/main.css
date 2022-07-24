@@ -2484,7 +2484,10 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			content: '\f00c';
 		}
-
+	ul li{
+		text-align: start;
+		list-style-type: none;
+	}
 	input[type="checkbox"] + label:before {
 		border-radius: 0;
 	}
