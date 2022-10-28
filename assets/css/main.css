@@ -3334,7 +3334,7 @@ input, select, textarea {
 
 	#intro {
 		color: #ffffff;
-		padding: 8rem 4rem 6rem 4rem ;
+		padding: 15rem 4rem 6rem 4rem ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -3519,7 +3519,7 @@ input, select, textarea {
 
 			#intro {
 				padding: 3rem 2rem 1rem 2rem ;
-				min-height: 80vh;
+				min-height: 30vh;
 			}
 
 				#intro h1 {
@@ -3828,7 +3828,7 @@ input, select, textarea {
 		}
 
 		#main > .post {
-			padding: 8rem 8rem 6rem 8rem ;
+			padding: 1rem 8rem 6rem 8rem ;
 		}
 
 			#main > .post header.major > .date {
