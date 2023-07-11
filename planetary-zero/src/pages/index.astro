@@ -1,0 +1,136 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+				
+			<!-- Intro -->
+				<div>
+					<h1>Diego<br/>
+					Hernandez</h1>
+					<p>Full Stack Developer</p>
+					
+				</div>
+
+			<!-- Main -->
+				<div id="main">
+
+					<!-- Featured Post -->
+						<article class="post featured">
+							<header class="major">
+								<a href="#" class="image main"><img id ='memoji' src="images/Diego'sMemoji.jpeg" alt="Memoji of Diego with a apple laptop" /></a>
+								<h2><a href="#">About Me</a></h2>
+								<p>I am a passionate Full-Stack Software Engineer. I love creating great web solutions for my clients and creating impactful projects. I aim to make an everlasting effect on people's lives with code.
+								</p>
+							</header>
+						<a href="Services.html" class ='button'>Book my Services</a>
+						</article>
+								<h2 id = main>Projects</h2>
+					<!-- Posts -->
+						<section class="posts">
+							<article>
+								<header>
+									<h2><a href="#">CindyBeauty </br> (Client Webstie)</a></h2>
+								</header>
+								<a href="https://cindybeauty.netlify.app/" class="image fit"><img src="images/cindyWeb.png" alt="an image of cindy nails website" /></a>
+								<p>Built website for a custom nails business.Speeding up owners booking time by 40%.</br>HTML,CSS,JavaScript</p>
+								<ul class="actions special">
+									<li><a href="https://cindybeauty.netlify.app/" class="button">See Project</a></li>
+								</ul>
+							</article>
+							<article>
+								<header>
+									<h2><a href="https://dhhz19.github.io/GabbysE-commerce/moren-html/index.html">Mirala Botique </br>(E-Commerce & Client Website)
+									</a></h2>
+								</header>
+								<a href="https://dhhz19.github.io/GabbysE-commerce/moren-html/index.html" class="image fit"><img src="https://media.giphy.com/media/hVJmdqCFrclfMwiVkt/giphy.gif" alt="E commerce website of a botique" /></a>
+								<p>E-commerce store leveraged shopify apis</br>JavaScript,BootStrap,CSS, Shopify Api</p>
+								<ul class="actions special">
+									<li><a href="https://dhhz19.github.io/GabbysE-commerce/moren-html/index.html" class="button">See Project</a></li>
+							</article>
+							<article>
+								<header>
+									<h2><a href="https://github.com/DHHZ19/filePasswordProtected">Passowrd Protect! </br>
+									</a></h2>
+								</header>
+								<a href="https://github.com/DHHZ19/filePasswordProtected" class="image fit"><img src="images/data protection.svg" alt="Image of website with a button to upload and image and set a password" /></a>
+								<p>Upload an file and password protect it with hashing and salting of password!</br>JavaScript,CSS,Node.js,MongoDB,EJS</p>
+								<ul class="actions special">
+									<li><a href="https://dhhz19.github.io/Festi-Coatza/cyan/index.html" class="button">See Project</a></li>
+							</article>
+							<article>
+								<header>
+									<h2><a href="https://dhhz19.github.io/Festi-Coatza/cyan/index.html">Party Planning Services </br>(Client Webiste)
+									</a></h2>
+								</header>
+								<a href="https://dhhz19.github.io/Festi-Coatza/cyan/index.html" class="image fit"><img src="images/Festi-Coatza.png" alt="Festi Coatza" /></a>
+								<p>Webiste for party planning service.</br>JavaScript,HTML5,CSS,Node.js</p>
+								<ul class="actions special">
+									<li><a href="https://dhhz19.github.io/Festi-Coatza/cyan/index.html" class="button">See Project</a></li>
+							</article>	
+						</section>
+						<footer>
+							<a href="moreProjects.html" class="button primary large">More Projects</a>
+						</footer>
+						</div>
+			<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<form action="https://getform.io/f/0610e810-503f-4453-ad17-c4ec34c362d3" method="POST">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="3"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send Message"/></li>
+							</ul>
+						</form>
+					</section>
+					<section class="split contact">
+						<section class="alt">
+							<h3>Location</h3>
+							<p>Minneaplois, Minnesota</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">diegohern777@gmail.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://twitter.com/DiegoCode_" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://github.com/DHHZ19" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+			<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>&copy; Diego's Web</li></li></ul>
+				</div>
+				
+		</div>
+		<Footer />
+	</body>
+</html>
