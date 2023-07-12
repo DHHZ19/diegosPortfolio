@@ -2,7 +2,7 @@
 interface Item {
   title: string;
   description: string;
-  icon?: string;
+  img: string;
 }
 
 export interface Props {
@@ -13,14 +13,15 @@ export interface Props {
 const { title = await Astro.slots.render("title"), items = [] } = Astro.props;
 ---
 
-<section class="">
-  {title && <div class="">{title && <h2 set:html={title} />}</div>}
+<section>
+  {title && <h2>{title && <h2 set:html={title} />}</h2>}
   {
     items.map((subitems) => (
       <div>
-        {subitems.map(({ title, description }) => (  
-            <h3 class="mb-3 text-xl font-bold">{title}</h3>
-            <p class="text-muted " set:html={description} />
+        {subitems.map(({ title, description,img }) => (  
+            <h3 class=" text-xl font-bold">{title}</h3>
+            <p set:html={description} />
+            <img src={img} alt=""/>
         ))}
       </div>
     ))
