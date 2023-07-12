@@ -2,6 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Projects from "../components/Projects.astro";
+
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -12,209 +14,60 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </head>
   <body>
     <Header title={SITE_TITLE} />
+    <!-- Intro -->
+    <section class="">
+      <h1>
+        Diego<br />
+        Hernandez
+      </h1>
+      <span>Full Stack Developer</span>
+    </section>
+    <!-- Main -->
     <main>
-      <!-- Intro -->
-      <section class="">
-        <h1>
-          Diego<br />
-          Hernandez
-        </h1>
-        <p>Full Stack Developer</p>
-      </section>
-
-      <!-- Main -->
-      <div>
-        <!-- Featured Post -->
-        <article class="post featured">
-          <header class="major">
-            <a href="#"
-              ><img
-                id="memoji"
-                src="images/Diego'sMemoji.jpeg"
-                alt="Memoji of Diego with a apple laptop"
-              /></a
-            >
-            <h2><a href="#">About Me</a></h2>
-            <p>
-              I am a passionate Full-Stack Software Engineer. I love creating
-              great web solutions for my clients and creating impactful
-              projects. I aim to make an everlasting effect on people's lives
-              with code.
-            </p>
-          </header>
-          <a href="Services.html">Book my Services</a>
-        </article>
-        <h2>Projects</h2>
-        <!-- Posts -->
-        <section class="posts">
-          <article>
-            <header>
-              <h2><a href="#">CindyBeauty</a> (Client Webstie)</h2>
-            </header>
-          </article>
-          <a href="https://cindybeauty.netlify.app/" class="image fit"
-            ><img
-              src="images/cindyWeb.png"
-              alt="an image of cindy nails website"
-            /></a
-          >
-          <p>
-            Built website for a custom nails business.Speeding up owners booking
-            time by 40%.
-          </p>HTML,CSS,JavaScript
-        </section>
-        <ul class="actions special">
-          <li>
-            <a href="https://cindybeauty.netlify.app/" class="button"
-              >See Project</a
-            >
-          </li>
-        </ul>
-      </div>
-      <article>
-        <header>
-          <h2>
-            <a
-              href="https://dhhz19.github.io/GabbysE-commerce/moren-html/index.html"
-              >Mirala Botique
-            </a>(E-Commerce & Client Website)
-          </h2>
-        </header>
-      </article>
-      <a
-        href="https://dhhz19.github.io/GabbysE-commerce/moren-html/index.html"
-        class="image fit"
-        ><img
-          src="https://media.giphy.com/media/hVJmdqCFrclfMwiVkt/giphy.gif"
-          alt="E commerce website of a botique"
-        /></a
-      >
-      <p>E-commerce store leveraged shopify apis</p>JavaScript,BootStrap,CSS,
-      Shopify Api
-    </main>
-    <ul class="actions special">
-      <li>
-        <a
-          href="https://dhhz19.github.io/GabbysE-commerce/moren-html/index.html"
-          class="button">See Project</a
-        >
-      </li>
-    </ul>
-    <article>
-      <header>
-        <h2>
-          <a href="https://github.com/DHHZ19/filePasswordProtected"
-            >Passowrd Protect!
-          </a>
-        </h2>
-      </header>
-    </article>
-    <a href="https://github.com/DHHZ19/filePasswordProtected" class="image fit"
-      ><img
-        src="images/data protection.svg"
-        alt="Image of website with a button to upload and image and set a password"
-      /></a
-    >
-    <p>
-      Upload an file and password protect it with hashing and salting of
-      password!
-    </p>JavaScript,CSS,Node.js,MongoDB,EJS
-    <ul class="actions special">
-      <li>
-        <a
-          href="https://dhhz19.github.io/Festi-Coatza/cyan/index.html"
-          class="button">See Project</a
-        >
-      </li>
-    </ul>
-    <article>
-      <header>
-        <h2>
-          <a href="https://dhhz19.github.io/Festi-Coatza/cyan/index.html"
-            >Party Planning Services
-          </a>(Client Webiste)
-        </h2>
-      </header>
-    </article>
-    <a
-      href="https://dhhz19.github.io/Festi-Coatza/cyan/index.html"
-      class="image fit"
-      ><img src="images/Festi-Coatza.png" alt="Festi Coatza" /></a
-    >
-    <p>Webiste for party planning service.</p>JavaScript,HTML5,CSS,Node.js
-    <ul class="actions special">
-      <li>
-        <a
-          href="https://dhhz19.github.io/Festi-Coatza/cyan/index.html"
-          class="button">See Project</a
-        >
-      </li>
-    </ul>
-
-    <footer>
-      <a href="moreProjects.html">More Projects</a>
-    </footer>
-
-    <!-- Footer -->
-    <footer>
-      <section>
-        <form
-          action="https://getform.io/f/0610e810-503f-4453-ad17-c4ec34c362d3"
-          method="POST"
-        >
-          <div class="fields">
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea name="message" id="message" rows="3"></textarea>
-            </div>
-          </div>
-          <ul class="actions">
-            <li><input type="submit" value="Send Message" /></li>
-          </ul>
-        </form>
-      </section>
-      <section class="split contact">
-        <section class="alt">
+      <!-- Projects -->
+      <Projects
+        title="My Projects/Work"
+        items={[
+          [
+            {
+              title: "Roofing",
+              description:
+                "Investments as big as replacing your home's roof we want to offer every resource necessary from inspections to repairs, and full installations.",
+            },
+            {
+              title: "Siding",
+              description:
+                "Maintaining siding is a crucial part of your home's exterior whether you are replacing or updating your exterior. We offer inspection and installments for your convenience. ",
+            },
+          ],
+          [
+            {
+              title: "Storm Damage & Maintenance",
+              description:
+                "Unforeseen events such as harsh storms and hail cause damage to your home, rely on our team to relieve stress from your shoulders and make the necessary repairs. In cases where storm damage has occurred we offer around the clock repairs.",
+            },
+            {
+              title: "Roof Repairs",
+              description:
+                "When a full roof replacement is not necessary due to the area that needs to be prioritized is minimal, a roof repair is the most effective to longate the age of your roof.",
+            },
+          ],
+        ]}
+      />
+      <!-- Footer -->
+      <footer>
+        <section>
           <h3>Location</h3>
           <p>Minneaplois, Minnesota</p>
+          <section>
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:diegohern777@gmail.com">diegohern777@gmail.com</a>
+            </p>
+          </section>
         </section>
-        <section>
-          <h3>Email</h3>
-          <p>
-            <a href="mailto:diegohern777@gmail.com">diegohern777@gmail.com</a>
-          </p>
-        </section>
-        <section>
-          <h3>Social</h3>
-          <ul class="icons alt">
-            <li>
-              <a
-                href="https://twitter.com/DiegoCode_"
-                class="icon brands alt fa-twitter"
-                ><span class="label">Twitter</span></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://github.com/DHHZ19"
-                class="icon brands alt fa-github"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-          </ul>
-        </section>
-        <ul><li>&copy; Diego's Web</li></ul>
-      </section>
-    </footer>
-
-    <Footer />
+        <Footer />
+      </footer>
+    </main>
   </body>
 </html>
