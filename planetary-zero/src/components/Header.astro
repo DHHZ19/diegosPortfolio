@@ -3,10 +3,10 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header>
-  <h2>
+<header class="w-full text-center">
+  <h1 class="capitalize text-2xl">
     {SITE_TITLE}
-  </h2>
+  </h1>
   <nav>
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
@@ -21,9 +21,6 @@ import { SITE_TITLE } from "../consts";
   </nav>
 </header>
 <style>
-  header {
-    margin: 0em 0 2em;
-  }
   h2 {
     margin: 0.5em 0;
   }

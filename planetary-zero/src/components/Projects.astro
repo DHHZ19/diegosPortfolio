@@ -12,18 +12,15 @@ export interface Props {
 
 const { title = await Astro.slots.render("title"), items = [] } = Astro.props;
 ---
-
-<section>
   {title && <h2>{title && <h2 set:html={title} />}</h2>}
   {
     items.map((subitems) => (
-      <div>
+      <section class="flex flex-col justify-self-center">
         {subitems.map(({ title, description,img }) => (  
             <h3 class=" text-xl font-bold">{title}</h3>
             <p set:html={description} />
-            <img src={img} alt=""/>
+            <img class="w-36" src={img} alt=""/>
         ))}
-      </div>
+      </section>
     ))
   }
-</section>
