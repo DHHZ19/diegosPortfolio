@@ -12,14 +12,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="flex flex-col">
+  <body class="flex flex-col w-full">
     <Header title={SITE_TITLE} />
-    <!-- Intro -->
-    <section class="flex flex-col justify-center self-center">
-      <span class="text-xl">Full Stack Developer</span>
-    </section>
     <!-- Main -->
-    <main class="flex flex-col justify-center">
+    <main class="flex flex-col justify-center w-full">
       <!-- Projects -->
       <slot />
     </main>
