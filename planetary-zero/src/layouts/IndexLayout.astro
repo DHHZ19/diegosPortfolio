@@ -12,10 +12,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="flex flex-col w-full">
+  <body
+    class="flex flex-col w-full dark:bg-[color:var(--darkmode-color)] dark:text-white"
+  >
     <Header title={SITE_TITLE} />
     <!-- Main -->
-    <main class="flex flex-col justify-center w-full">
+    <main class="flex flex-col items-center w-full sm:w-1/2 self-center">
       <!-- Projects -->
       <slot />
     </main>

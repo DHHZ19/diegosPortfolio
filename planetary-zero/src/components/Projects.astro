@@ -15,19 +15,21 @@ const { title = await Astro.slots.render("title"), items = [] } = Astro.props;
 
 {
   title && (
-    <h2>
-      {title && <h2 class="self-center font-extrabold" set:html={title} />}
-    </h2>
+    <h2>{title && <h2 class="self-center font-bold" set:html={title} />}</h2>
   )
 }
 {
   items.map((subitems) => (
-    <section class="flex align-self-center flex-wrap justify-center">
+    <section class="flex flex-wrap gap-y-8 gap-x-10 justify-evenly">
       {subitems.map(({ title, description, img }) => (
-        <section class="flex basis-1/3 flex-wrap p-12">
-          <h3 class=" text-xl font-bold">{title}</h3>
-          <p set:html={description} />
-          <img class="w-36" src={img} alt="" />
+        <section class="flex break-all w-1/2 sm:w-2/6">
+          <div class="w-fit gap-x-4 gap-y-4 flex">
+            <img class="h-32 w-32 rounded-lg" src={img} alt="" />
+            <div class="basis-1/2 break-all">
+              <h3 class="font-semibold">{title}</h3>
+              <p set:html={description} />
+            </div>
+          </div>
         </section>
       ))}
     </section>
