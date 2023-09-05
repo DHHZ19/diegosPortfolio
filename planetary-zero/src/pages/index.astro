@@ -5,11 +5,19 @@ import Projects from "../components/Projects.astro";
 
 <MySiteLayout title="Home Page">
   <section class="flex flex-col items-center">
-    <div class="p-2">
-      <span class="text-2xl font-bold">Currently</span>
+    <div class="">
       <ol>
-        <li class="pl-4">Work as Front End Developer at Outsell</li>
-        <li class="pl-4">Dreaming / studying / practicing</li>
+        <li>
+          <span class="text-2xl font-bold">Currently</span>
+          <li class="pl-4">Front End Developer at Outsell</li>
+          <li class="pl-4">Dreaming / studying / practicing</li>
+        </li>
+        <li>
+          <span class="text-2xl font-bold">Previously</span>
+          <li class="pl-4">Freelance Dev</li>
+          <li class="pl-4">100Devs</li>
+          <li class="pl-4">Web Developer at NCXT</li>
+        </li>
       </ol>
     </div>
     <!-- Projects -->
@@ -18,25 +26,9 @@ import Projects from "../components/Projects.astro";
       items={[
         [
           {
-            title: "PROEJCT",
+            title: "Virtue Construction",
             img: "http://placekitten.com/g/200/300",
-            description: "lorem10af;dlajskflaskjfasdl;kfjaslkjdafdsfassafas",
-          },
-          {
-            title: "PROEJCT",
-            img: "http://placekitten.com/g/200/300",
-            description: "df;jaslkfjasdfasdf;lasdjfasl;kfjas;",
-          },
-          {
-            title: "PROEJCT",
-            img: "http://placekitten.com/g/200/300",
-            description: "adfasfsafasfsafas",
-          },
-          {
-            title: "PROEJCT",
-            img: "http://placekitten.com/g/200/300",
-
-            description: "dfasfsafas",
+            description: "Tech used: Astro, Tailwind",
           },
         ],
       ]}
