@@ -13,11 +13,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body
-    class="flex flex-col w-full dark:bg-[color:var(--darkmode-color)] dark:text-white"
+    class="flex flex-col w-full dark:bg-[color:var(--darkmode-color)] dark:text-white h-screen"
   >
     <Header title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <!-- Main -->
-    <main class="flex flex-col w-full sm:w-1/2 self-center items-center">
+    <main class="flex flex-col w-full sm:2/3 self-center items-center">
       <!-- Projects -->
       <slot />
     </main>

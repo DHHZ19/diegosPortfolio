@@ -1,11 +1,13 @@
 ---
 import MySiteLayout from "../layouts/IndexLayout.astro";
 import Projects from "../components/Projects.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <MySiteLayout title="Home Page">
-  <section class="flex flex-col">
-    <div>
+  <section class="flex flex-col p-4">
+    <div class="p-2">
       <ol>
         <li>
           <span class="text-2xl font-bold">Currently</span>

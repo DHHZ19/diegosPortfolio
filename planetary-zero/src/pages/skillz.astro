@@ -3,14 +3,33 @@ import MySiteLayout from "../layouts/IndexLayout.astro";
 ---
 
 <MySiteLayout title="Skillz Page">
-  <div class="">
-    <h2 class="font-semibold text-2xl py-1">My skillz</h2>
-    <p class="">
-      I've worked on entrprise level applications, helping compaines deliver
-      what they promise and much more. I work with care and efficency while
-      optimizing code for best performance for millions of end users.
-    </p>
-  </div>
+  <section class="w-full p-4 text-center flex flex-col items-center">
+    <h2 class="font-semibold text-2xl py-1">Tech stack</h2>
+
+    <div class="flex flex-wrap gap-4 text-sm w-1/2 py-2">
+      <div
+        class="card--techstack border border-black rounded-md shadow-black shadow-md p-2 dark:border-white dark:shadow-white"
+      >
+        <span>TS, C#</span>
+      </div>
+      <div
+        class="card--techstack border border-black rounded-md shadow-black shadow-md p-2 dark:border-white dark:shadow-white"
+      >
+        <span> Razor Pages, Sitecore, Astro, React</span>
+      </div>
+      <div
+        class="card--techstack border border-black rounded-md shadow-black shadow-md p-2 dark:border-white dark:shadow-white"
+      >
+        <span>SCSS, Tailwind</span>
+      </div>
+      <div
+        class="card--techstack border border-black rounded-md shadow-black shadow-md p-2 dark:border-white dark:shadow-white"
+      >
+        <span>Postgres, MongoDB, MySQL</span>
+      </div>
+    </div>
+  </section>
+
   <div class="flex -space-x-2 overflow-hidden justify-center">
     <img
       class="inline-block h-10 w-10 rounded-full ring-2 ring-white"

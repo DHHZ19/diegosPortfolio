@@ -6,10 +6,31 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5em;
 }
-nav a {
-  margin-right: 10px;
-}
 
 :root {
   --darkmode-color: #131415;
+}
+.shadow-7-0-7-2 {
+  box-shadow: 7px 7px 0 2px black;
+}
+
+.button-press-in:hover {
+  text-decoration: none;
+  transform: translate(2px, 10%);
+  box-shadow: 6px 6px 0 0 black;
+}
+
+.card--techstack {
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .shadow-7-0-7-2 {
+    box-shadow: 7px 7px 0 2px purple;
+  }
+  .button-press-in:hover {
+    text-decoration: none;
+    transform: translate(2px, 10%);
+    box-shadow: 6px 6px 0 0 purple;
+  }
 }
