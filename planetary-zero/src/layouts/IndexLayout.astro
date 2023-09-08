@@ -11,6 +11,50 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script>
+      const sunIcon = document.querySelector(".sun");
+      const moonIcon = document.querySelector(".moon");
+
+      const userTheme = localStorage.getItem("theme");
+      const systemTheme = window.matchMedia(
+        "(perfers-color-scheme: dark)"
+      ).matches;
+
+      const iconToggle = () => {
+        moonIcon.classList.toggle("hidden");
+        sunIcon.classList.toggle("hidden");
+      };
+
+      const themeCheck = () => {
+        if (userTheme === "dark" || (!userTheme && systemTheme)) {
+          document.documentElement.classList.add("dark");
+          moonIcon.classList.add("hidden");
+          return;
+        }
+        sunIcon.classList.add("hidden");
+      };
+      const themeSwitch = () => {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+          iconToggle();
+          return;
+        }
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        iconToggle();
+      };
+
+      sunIcon.addEventListener("click", () => {
+        themeSwitch();
+      });
+
+      moonIcon.addEventListener("click", () => {
+        themeSwitch();
+      });
+
+      themeCheck();
+    </script>
   </head>
   <body
     class="flex flex-col w-full dark:bg-[color:var(--darkmode-color)] dark:text-white h-screen"
