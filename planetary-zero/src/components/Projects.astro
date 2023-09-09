@@ -1,19 +1,8 @@
 ---
 import Button from "./Button.astro";
+import data from "../data.json";
 
-interface Item {
-  title: string;
-  description: string;
-  img: string;
-  href: string;
-}
-
-export interface Props {
-  title?: string;
-  items: Array<Array<Item>>;
-}
-
-const { title = await Astro.slots.render("title"), items = [] } = Astro.props;
+const { title = await Astro.slots.render("title") } = Astro.props;
 ---
 
 <section class="flex flex-col p-2">
@@ -27,20 +16,20 @@ const { title = await Astro.slots.render("title"), items = [] } = Astro.props;
     )
   }
   {
-    items.map((subitems) => (
-      <div>
-        {subitems.map(({ title, description, img, href }) => (
+    data.map((subitems) => (
+      <div class="p-4">
+        {
           <section class="flex flex-col break-all w-full whitespace-nowrap gap-y-4">
             <div class="w-fit gap-x-4 flex">
-              <img class="h-32 w-32 rounded-lg" src={img} alt="" />
+              <img class="h-32 w-32 rounded-lg" src={subitems.img} alt="" />
               <div class="break-all basis-1/2 max-h-24">
                 <h3 class="font-semibold">{title}</h3>
-                <p set:html={description} />
+                <p set:html={subitems.description} />
               </div>
             </div>
-            <Button href={href}>View Proj</Button>
+            <Button href={subitems.href}>View Proj</Button>
           </section>
-        ))}
+        }
       </div>
     ))
   }

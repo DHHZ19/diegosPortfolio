@@ -1,5 +1,6 @@
 ---
 import MySiteLayout from "../layouts/IndexLayout.astro";
+import Cv from "../components/Cv.astro";
 ---
 
 <MySiteLayout title="Skillz Page">
@@ -29,7 +30,9 @@ import MySiteLayout from "../layouts/IndexLayout.astro";
       </div>
     </div>
   </section>
-
+  <section class="w-full h-screen flex justify-center">
+    <Cv />
+  </section>
   <div class="flex -space-x-2 overflow-hidden justify-center">
     <img
       class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
