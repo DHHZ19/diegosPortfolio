@@ -1,0 +1,28 @@
+---
+import MySiteLayout from "../layouts/IndexLayout.astro";
+import Projects from "../components/Projects.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<MySiteLayout title="Home Page">
+  <section class="flex flex-col p-4">
+    <div class="p-2">
+      <ol>
+        <li>
+          <span class="text-2xl font-bold">Currently</span>
+          <li class="pl-4">Front End Developer at Outsell</li>
+          <li class="pl-4">Exploring / Studying / Practicing</li>
+        </li>
+        <li>
+          <span class="text-2xl font-bold">Previously</span>
+          <li class="pl-4">Freelance Dev</li>
+          <li class="pl-4">100Devs</li>
+          <li class="pl-4">Web Developer at NCXT</li>
+        </li>
+      </ol>
+    </div>
+    <!-- Projects -->
+    <Projects title=" Projects / Work" />
+  </section>
+</MySiteLayout>

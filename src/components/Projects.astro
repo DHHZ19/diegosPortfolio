@@ -1,0 +1,36 @@
+---
+import Button from "./Button.astro";
+import data from "../data.json";
+
+const { title = await Astro.slots.render("title") } = Astro.props;
+---
+
+<section class="flex flex-col p-2">
+  {
+    title && (
+      <h2>
+        {title && (
+          <h2 class="font-bold text-start text-2xl p-4" set:html={title} />
+        )}
+      </h2>
+    )
+  }
+  {
+    data.map((subitems) => (
+      <div class="p-4">
+        {
+          <section class="flex flex-col break-all w-full whitespace-nowrap gap-y-4">
+            <div class="w-fit gap-x-4 flex">
+              <img class="h-32 w-32 rounded-lg" src={subitems.img} alt="" />
+              <div class="break-all basis-1/2 max-h-24">
+                <h3 class="font-semibold">{title}</h3>
+                <p set:html={subitems.description} />
+              </div>
+            </div>
+            <Button href={subitems.href}>View Proj</Button>
+          </section>
+        }
+      </div>
+    ))
+  }
+</section>
