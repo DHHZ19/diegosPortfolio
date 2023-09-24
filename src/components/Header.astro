@@ -1,5 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
@@ -27,22 +28,7 @@ import { SITE_TITLE } from "../consts";
     <HeaderLink href="https://twitter.com/DiegoCode_" target="_blank">
       Twitter
     </HeaderLink>
-    <div class="inline-block">
-      <img
-        width="48"
-        height="48"
-        class="sun inline-block cursor-pointer"
-        src="https://img.icons8.com/emoji/48/sun-emoji.png"
-        alt="sun-emoji"
-      />
-      <img
-        class="moon inline-block cursor-pointer"
-        width="48"
-        height="48"
-        src="https://img.icons8.com/plasticine/100/crescent-moon.png"
-        alt="crescent-moon"
-      />
-    </div>
+    <ThemeToggle />
   </nav>
 </header>
 <style>
