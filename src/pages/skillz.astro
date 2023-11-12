@@ -1,6 +1,5 @@
 ---
 import MySiteLayout from "../layouts/IndexLayout.astro";
-import Cv from "../components/Cv.astro";
 ---
 
 <MySiteLayout title="Skillz Page">
@@ -36,23 +35,6 @@ import Cv from "../components/Cv.astro";
     </div>
   </section>
   <section class="w-full h-screen flex justify-center">
-    <Cv />
+    <iframe src="Resume_1.html" class="w-1/2"></iframe>
   </section>
-  <div class="flex -space-x-2 overflow-hidden justify-center">
-    <img
-      class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173442/HTML5_Badge.svg"
-      alt=""
-    />
-    <img
-      class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173442/CSS3_Badge.svg"
-      alt=""
-    />
-    <img
-      class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173442/JS_Badge.svg"
-      alt=""
-    />
-  </div>
 </MySiteLayout>
