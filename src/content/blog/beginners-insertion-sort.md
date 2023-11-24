@@ -4,7 +4,7 @@ description: "Here is a sample of some basic Markdown syntax that can be used wh
 pubDate: "9 16 2022"
 ---
 
-# How to do Insertion Sort for beginners in JS
+# How to solve Insertion Sort for beginners in JS
 
 If you don't know what insertion sort is I recommend giving it a try at the problem for 10 minutes then come back or just check out how to implement it.
 
