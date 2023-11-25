@@ -6,17 +6,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <MySiteLayout title="Home Page">
-  <section class="pt-10 px-40">
-    <h1 class="capitalize text-5xl">
-      {SITE_TITLE}
-    </h1>
-    <p class="text-xl sm:w-2/3">
-      Software developer, love coding in flow state, always seeking new
-      challenges, outdoors lover
-    </p>
+  <section class="mx-auto w-full max-w-7xl lg:px-8 pl-5 flex">
+    <img
+      src="https://media.licdn.com/dms/image/D5603AQH-TAZfdZHUbA/profile-displayphoto-shrink_400_400/0/1700527515624?e=1706140800&v=beta&t=cdM1-bbUXQGBN2YMo87__zGYbN_JrExBiTmq0EBFAAA"
+      alt=""
+      class="w-24 h-24 rounded-full object-cover justify-start self-start"
+    />
+    <div class="flex-1 px-5">
+      <h1 class="capitalize text-5xl">
+        {SITE_TITLE}
+      </h1>
+      <p class="text-xl sm:w-2/3">
+        Software developer, love coding in flow state, always seeking new
+        challenges, outdoors lover
+      </p>
+    </div>
   </section>
-  <section class="flex flex-col w-1/2 p-4">
-    <ol>
+  <section class="mx-auto w-full max-w-7xl lg:px-8 p-5">
+    <ol class="">
       <li>
         <span class="text-2xl font-bold">Currently</span>
         <li class="pl-4">Front End Developer at Outsell</li>
@@ -29,7 +36,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <li class="pl-4">Freelance Dev</li>
       </li>
     </ol>
-    <!-- Projects -->
-    <Projects title="Projects / Work" />
   </section>
+  <Projects title="Projects / Work" />
 </MySiteLayout>
