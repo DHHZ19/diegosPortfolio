@@ -6,31 +6,29 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <MySiteLayout title="Home Page">
-  <section class="p-4 pt-10">
+  <section class="pt-10 px-40">
     <h1 class="capitalize text-5xl">
       {SITE_TITLE}
     </h1>
-    <p class="text-xl sm:w-1/3 inline-block">
+    <p class="text-xl sm:w-2/3">
       Software developer, love coding in flow state, always seeking new
       challenges, outdoors lover
     </p>
   </section>
-  <section class="flex flex-col p-4">
-    <div class="p-2">
-      <ol>
-        <li>
-          <span class="text-2xl font-bold">Currently</span>
-          <li class="pl-4">Front End Developer at Outsell</li>
-          <li class="pl-4">Exploring / Studying / Practicing</li>
-        </li>
-        <li>
-          <span class="text-2xl font-bold">Previously</span>
-          <li class="pl-4">Web Developer at NCXT</li>
-          <li class="pl-4">Software Engineer at 100Devs</li>
-          <li class="pl-4">Freelance Dev</li>
-        </li>
-      </ol>
-    </div>
+  <section class="flex flex-col w-1/2 p-4">
+    <ol>
+      <li>
+        <span class="text-2xl font-bold">Currently</span>
+        <li class="pl-4">Front End Developer at Outsell</li>
+        <li class="pl-4">Exploring / Studying / Practicing</li>
+      </li>
+      <li>
+        <span class="text-2xl font-bold">Previously</span>
+        <li class="pl-4">Web Developer at NCXT</li>
+        <li class="pl-4">Software Engineer at 100Devs</li>
+        <li class="pl-4">Freelance Dev</li>
+      </li>
+    </ol>
     <!-- Projects -->
     <Projects title="Projects / Work" />
   </section>
