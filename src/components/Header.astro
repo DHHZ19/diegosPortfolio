@@ -1,10 +1,18 @@
 ---
 import Nav from "./Nav.astro";
 import { SITE_TITLE } from "../consts";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header class="w-full text-center p-4 pt-1">
-  <section class="p-4">
+<header class="relative px-4 sm:px-8 lg:px-12 gap-4 text-center p-2 pt-1">
+  <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <div class="relative flex gap-4">
+      <div class="flex flex-1"></div>
+      <Nav />
+      <ThemeToggle />
+    </div>
+  </div>
+  <section class="p-4 pt-10">
     <h1 class="capitalize text-5xl p-2">
       {SITE_TITLE}
     </h1>
@@ -13,8 +21,6 @@ import { SITE_TITLE } from "../consts";
       challenges, outdoors lover
     </p>
   </section>
-
-  <Nav />
 </header>
 <style>
   h2 {
