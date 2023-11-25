@@ -1,20 +1,21 @@
 ---
 import MySiteLayout from "../layouts/IndexLayout.astro";
 import Projects from "../components/Projects.astro";
-import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import HeaderLink from "../components/HeaderLink.astro";
 ---
 
 <MySiteLayout title="Home Page">
   <section
-    class="mx-auto w-full max-w-7xl lg:px-8 pl-5 flex border-solid border-slate-500 dark:border-slate-100 border-l-2 border-r-2"
+    class="mx-auto flex-wrap w-full max-w-7xl lg:px-8 pl-5 flex border-solid border-slate-500 dark:border-slate-100 border-l-2 border-r-2"
   >
     <img
       src="https://media.licdn.com/dms/image/D5603AQH-TAZfdZHUbA/profile-displayphoto-shrink_400_400/0/1700527515624?e=1706140800&v=beta&t=cdM1-bbUXQGBN2YMo87__zGYbN_JrExBiTmq0EBFAAA"
       alt=""
       class="w-24 h-24 rounded-full object-cover justify-start self-start border-solid border-2 border-purple-600"
     />
-    <div class="flex-1 px-5">
+    <div class="flex-1 px-5" style="  flex: 1 1 50%;
+    ">
       <h1 class="capitalize text-5xl">
         {SITE_TITLE}
       </h1>
@@ -22,6 +23,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         Software developer, love coding in flow state, always seeking new
         challenges, outdoors lover
       </p>
+    </div>
+    <div style="flex: 1 1 100%;">
+      <HeaderLink href="https://github.com/DHHZ19" target="_blank">
+        GitHub
+      </HeaderLink>
+      <HeaderLink href="https://linkedin.com/in/diegohernandezcode">
+        Linkedin
+      </HeaderLink>
+      <HeaderLink href="https://twitter.com/DiegoCode_" target="_blank">
+        Twitter
+      </HeaderLink>
     </div>
   </section>
   <section
