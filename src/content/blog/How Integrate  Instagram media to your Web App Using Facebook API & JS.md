@@ -36,7 +36,7 @@ heroImage: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/WUmb_eBrpj
 
    1. to keep this token safe we will be putting it into a .env file and adding it to our .gitignore file.
 
-3. Next, you can use AstroJS to create a web app that displays the media posts. AstroJS provides a simple and intuitive API for building web apps, and it supports a wide range of features such as server-side rendering, static site generation, and more. You can follow the [official AstroJS documentation](https://docs.astro.build/en/getting-started/) to learn more about how to use the framework.
+3. Next, we'll setup the web app, if you haven't used AstroJS follow the official AstroJS documentation to learn more about how to use the framework. But that is not needed for this everything you need to know I'll describe below.
 
    1. Now we can start coding navigate to a directory in your computer where you don't mind creating a new folder
    2. run `npm create astro@latest` in your terminal
