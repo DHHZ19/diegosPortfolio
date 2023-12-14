@@ -40,7 +40,7 @@ const posts = (await getCollection("blog")).sort(
         <ul>
           {
             posts.map((post) => (
-              <li class="h-10 hover:bg-neutral-200 rounded p-1 dark:hover:bg-neutral-800">
+              <li class="hover:bg-neutral-200 rounded p-1 dark:hover:bg-neutral-800">
                 <a href={`/blog/${post.slug}/`} class="w-full">
                   <FormattedDate date={post.data.pubDate} />
                   <span class="pl-2">{post.data.title}</span>
