@@ -33,7 +33,7 @@ const posts = (await getCollection("blog")).sort(
     <main class="w-full">
       <div class="sm:px-8">
         <div class="mx-auto w-full max-w-7xl lg:px-8">
-          <div class="relative px-4 sm:px-8 lg:px-12">
+          <div class="relative px-4 sm:px-8 lg:px-52">
             <div class="mx-auto max-w-2xl lg:max-w-5xl">
               <header class="max-w-2xl">
                 <h1
@@ -54,10 +54,19 @@ const posts = (await getCollection("blog")).sort(
         <ul class="md:flex md:flex-col md:justify-center md:items-center">
           {
             posts.map((post) => (
-              <li class="hover:bg-neutral-200 rounded-lg dark:hover:bg-neutral-800 md:w-2/3 md:flex md:flex-row flex-col justify-center align-middle mt-2">
+              <li class="hover:bg-neutral-200 rounded-lg dark:hover:bg-neutral-800 md:w-2/3 md:flex md:flex-row flex-col justify-center align-middle max-w-3xl mt-16">
                 <FormattedDate date={post.data.pubDate} />
-                <a href={`/blog/${post.slug}/`} class="w-full p-2">
-                  <img class="w-56 pl-2" src={post.data.heroImage} alt="" />
+
+                <a href={`/blog/${post.slug}/`} class="w-full py-2">
+                  {post.data.heroImage ? (
+                    <img
+                      class="w-56 pl-2 py-2"
+                      src={post.data.heroImage}
+                      alt=""
+                    />
+                  ) : (
+                    ""
+                  )}
                   <h3 class="pl-2 pt-1 font-bold">{post.data.title}</h3>
                   <p class="p-2">{post.data.description}</p>
                   <span class="pl-2">Read blog</span>
