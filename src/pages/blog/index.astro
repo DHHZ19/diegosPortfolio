@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -42,8 +42,8 @@ const posts = (await getCollection("blog")).sort(
                   Writing on software development.
                 </h1><p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                   Tutorials on software topics like AI, Web development, backend
-                  development, software design, and more, collected in
-                  chronological order.
+                  development, data structures & algorthims, and more, collected
+                  in nonchronologically order.
                 </p>
               </header>
             </div>
