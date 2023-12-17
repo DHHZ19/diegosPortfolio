@@ -54,7 +54,7 @@ const posts = (await getCollection("blog")).sort(
         <ul class="md:flex md:flex-col md:justify-center md:items-center">
           {
             posts.map((post) => (
-              <li class="hover:bg-neutral-200 rounded-lg dark:hover:bg-neutral-800 md:w-2/3 md:flex md:flex-row flex-col justify-center align-middle max-w-3xl mt-16">
+              <li class="hover:bg-neutral-200 rounded-lg dark:hover:bg-neutral-800 md:w-2/3 md:flex md:flex-row flex-col justify-center align-middle max-w-3xl mt-12">
                 <FormattedDate date={post.data.pubDate} />
 
                 <a href={`/blog/${post.slug}/`} class="w-full py-2">
@@ -68,7 +68,9 @@ const posts = (await getCollection("blog")).sort(
                     ""
                   )}
                   <h3 class="pl-2 pt-1 font-bold">{post.data.title}</h3>
-                  <p class="p-2">{post.data.description}</p>
+                  <p class="p-2 text-sm text-neutral-600 dark:text-neutral-400">
+                    {post.data.description}
+                  </p>
                   <span class="pl-2">Read blog</span>
                 </a>
               </li>
