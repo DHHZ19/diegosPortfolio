@@ -33,9 +33,11 @@ const posts = (await getCollection("blog")).sort(
       }
     </style>
   </head>
-  <body class="w-full dark:bg-[color:var(--darkmode-color)] dark:text-white">
+  <body
+    class="w-full dark:bg-[color:var(--darkmode-color)] dark:text-white h-screen"
+  >
     <Header />
-    <main class="flex justify-center">
+    <main class="flex justify-center h-full">
       <section class="py-5">
         <ul>
           {
