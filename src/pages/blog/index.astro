@@ -16,19 +16,12 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
-      ul {
-        list-style-type: none;
-        padding: unset;
-      }
-      ul li {
-        display: flex;
-      }
       ul li :global(time) {
         flex: 0 0 130px;
         font-style: italic;
         color: #595959;
       }
-      ul li a:visited {
+      ul li a:visited span {
         color: #8e32dc;
       }
     </style>
@@ -37,17 +30,37 @@ const posts = (await getCollection("blog")).sort(
     class="w-full dark:bg-[color:var(--darkmode-color)] dark:text-white h-full"
   >
     <Header />
-    <main class="flex justify-center">
-      <section class="py-5">
-        <ul>
+    <main class="w-full">
+      <div class="sm:px-8">
+        <div class="mx-auto w-full max-w-7xl lg:px-8">
+          <div class="relative px-4 sm:px-8 lg:px-12">
+            <div class="mx-auto max-w-2xl lg:max-w-5xl">
+              <header class="max-w-2xl">
+                <h1
+                  class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+                >
+                  Writing on software development.
+                </h1><p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+                  Tutorials on software topics like AI, Web development, backend
+                  development, software design, and more, collected in
+                  chronological order.
+                </p>
+              </header>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="py-5 border-t-stone-400 border-t solid mt-4">
+        <ul class="md:flex md:flex-col md:justify-center md:items-center">
           {
             posts.map((post) => (
-              <li class="hover:bg-neutral-200 rounded-md p-1 dark:hover:bg-neutral-800 flex-col">
+              <li class="hover:bg-neutral-200 rounded-lg dark:hover:bg-neutral-800 md:w-2/3 md:flex md:flex-row flex-col justify-center align-middle px-5">
+                <FormattedDate date={post.data.pubDate} />
                 <a href={`/blog/${post.slug}/`} class="w-full p-2">
-                  <FormattedDate date={post.data.pubDate} />
                   <img class="w-56" src={post.data.heroImage} alt="" />
-                  <span class="pl-2">{post.data.title}</span>
+                  <h3 class="pl-2 pt-1 font-bold">{post.data.title}</h3>
                   <p class="p-2">{post.data.description}</p>
+                  <span>Read blog</span>
                 </a>
               </li>
             ))
