@@ -50,17 +50,17 @@ const posts = (await getCollection("blog")).sort(
           </div>
         </div>
       </div>
-      <section class="py-5 border-t-stone-400 border-t solid mt-4">
+      <section class="border-t-stone-400 border-t solid mt-4 px-4">
         <ul class="md:flex md:flex-col md:justify-center md:items-center">
           {
             posts.map((post) => (
-              <li class="hover:bg-neutral-200 rounded-lg dark:hover:bg-neutral-800 md:w-2/3 md:flex md:flex-row flex-col justify-center align-middle px-5">
+              <li class="hover:bg-neutral-200 rounded-lg dark:hover:bg-neutral-800 md:w-2/3 md:flex md:flex-row flex-col justify-center align-middle mt-2">
                 <FormattedDate date={post.data.pubDate} />
                 <a href={`/blog/${post.slug}/`} class="w-full p-2">
-                  <img class="w-56" src={post.data.heroImage} alt="" />
+                  <img class="w-56 pl-2" src={post.data.heroImage} alt="" />
                   <h3 class="pl-2 pt-1 font-bold">{post.data.title}</h3>
                   <p class="p-2">{post.data.description}</p>
-                  <span>Read blog</span>
+                  <span class="pl-2">Read blog</span>
                 </a>
               </li>
             ))
