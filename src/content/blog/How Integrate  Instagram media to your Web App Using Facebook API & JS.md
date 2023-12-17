@@ -1,6 +1,6 @@
 ---
 title: "How Integrate  Instagram media to your Web App Using Facebook API & JS"
-description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
+description: "To create a web app that displays Instagram media posts, you can use AstroJS, a modern web framework that is easy to learn and use. With steps"
 pubDate: "12 03 2023"
 heroImage: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/WUmb_eBrpjs/upload/d8ffd839cfca7e18bcccd8eceedbc66d.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp
 ---

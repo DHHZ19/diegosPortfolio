@@ -1,6 +1,6 @@
 ---
 title: "Understanding Insertion Sort for beginners"
-description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
+description: "A beginners guide to insertion sort"
 pubDate: "9 16 2022"
 ---
 
