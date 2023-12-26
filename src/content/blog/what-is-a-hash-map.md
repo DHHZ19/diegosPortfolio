@@ -14,7 +14,7 @@ A hash table goes through a process of making a hash for every key, the key is u
 
 The image below shows how a name for a phone book gets "hashed" and assigned a number in the underlying array and or linked lists (hash functions can be very complex, my explanation is quite simplified).
 
-[![Wikipedia Image of a hash function (A small phone book as a hash table)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/2560px-Hash_table_3_1_1_0_1_0_0_SP.svg.png align="left")](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/2560px-Hash_table_3_1_1_0_1_0_0_SP.svg.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/2560px-Hash_table_3_1_1_0_1_0_0_SP.svg.png" align="left"/>
 
 In Javascript, hash tables are usually implemented with an object but you can also use a [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) or [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/set).
 
@@ -86,5 +86,6 @@ Weakness:
 The unordered nature of a Hash Table makes for costly lookups if say you're trying to find the largest key O(n)
 
 Hope you found this helpful, happy coding!
-
-%[https://media.giphy.com/media/YbXLZ6dymH758xSEbM/giphy.gif]
+          <video autoplay loop muted width="500" height="300" src="https://media.giphy.com/media/YbXLZ6dymH758xSEbM/giphy.gif">
+           A penguin looking back at the camera after writing code.
+          </video>
