@@ -86,6 +86,5 @@ Weakness:
 The unordered nature of a Hash Table makes for costly lookups if say you're trying to find the largest key O(n)
 
 Hope you found this helpful, happy coding!
-          <video autoplay loop muted width="500" height="300" src="https://media.giphy.com/media/YbXLZ6dymH758xSEbM/giphy.gif">
-           A penguin looking back at the camera after writing code.
-          </video>
+![A penguin looking back at the camera after writing code.](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
