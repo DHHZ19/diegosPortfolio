@@ -14,16 +14,16 @@ import HeaderLink from "../components/HeaderLink.astro";
       alt=""
       class="w-24 h-24 rounded-full object-cover justify-start self-start border-solid border-2 border-purple-600"
     />
-    <div class="flex-1 md:px-5" style="flex: 1 1 50%;">
-      <h1 class="capitalize text-5xl">
-        {SITE_TITLE}
+    <div class="flex-auto md:flex-1 md:px-5 max-w-2xl" style="">
+      <h1 class="text-2xl tracking-tight font-bold">
+        {SITE_TITLE}, Software Engineer, loves problem solving, always seeking
+        new challenges, outdoors lover
       </h1>
-      <p class="text-xl sm:w-2/3">
-        Software developer, love coding in flow state, always seeking new
-        challenges, outdoors lover
+      <p class="text-base sm:w-2/3 mt-4 tracking-tight">
+        I share my development journey through technical articles and projects.
       </p>
     </div>
-    <div style="flex: 1 1 100%;">
+    <div class="flex-[1_1_100%] mt-4">
       <HeaderLink href="https://github.com/DHHZ19" target="_blank">
         GitHub
       </HeaderLink>
