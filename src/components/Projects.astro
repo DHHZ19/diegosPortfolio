@@ -5,9 +5,7 @@ import data from "../data.json";
 const { title = await Astro.slots.render("title") } = Astro.props;
 ---
 
-<div
-  class="mx-auto w-full max-w-7xl lg:px-8 pl-5 border-solid dark:border-slate-100 border-slate-500 border-l-2 border-r-2"
->
+<div class="mx-auto w-full max-w-7xl lg:px-12 p-5">
   <section class="flex flex-col">
     {
       title && (
