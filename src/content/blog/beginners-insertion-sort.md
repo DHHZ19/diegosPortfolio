@@ -82,15 +82,20 @@ The whole point or jist of Insertion sort is that we assume we have a sorted hal
 
 If we passed in this loop the very first iteration would look like the array above. We are choosing index zero to be sorted and assuming the right side is unsorted.
 
-We then ask if `array[0] > numberToInsert && j >= 0 // this is false`
+`numberToInsert = array\[1\]` and `j = 0`
+
+
+We then ask if `array[j] > numberToInsert && j >= 0 // this is false`
 
 So we move out of the loop and insert, now 3 is part of the sorted array
+
+array[1] = numberToInsert;
 
 `[1,3|-1,5,6]`
 
 ### Second iteration of outer loop
 
-Now numberToInsert = array\[2\] and j is going to equal 1
+Now `numberToInsert = array\[2\]` and `j = 1`
 
 #### First iteration of inner loop
 
@@ -122,7 +127,7 @@ we do the insertion
 
 ### Third iteration of outer loop
 
-Now numberToInsert = array\[3\] and j is going to equal 2
+Now `numberToInsert = array\[3\]` and `j = 2`
 
 #### First Iteration of inner loop
 
