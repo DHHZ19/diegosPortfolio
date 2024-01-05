@@ -18,7 +18,7 @@ This algo is also known as destructive as it operates on the array that is passe
 
 ## The code
 
-```plaintext
+```javascript
 function insertionSort(array) {
   for (let i = 1; i < array.length; i++) {
     let numberToInsert = array[i];
@@ -58,7 +58,7 @@ We will start with this array to sort `[1|3,-1,5,6]`
 
 **Everything to the left of the pipe character is assumed to be the sorted array everything to the right is the unsorted.**
 
-```plaintext
+```javascript
 function insertionSort(array) {
   for (let i = 1; i < array.length; i++) {
     let numberToInsert = array[i];
@@ -80,20 +80,21 @@ The whole point or jist of Insertion sort is that we assume we have a sorted hal
 
 #### First iteration of inner loop
 
-If we passed in this loop the very first iteration would look like the array above. We are choosing index zero to be sorted and assuming the right side is unsorted.
+first iteration would look like the array above. We are choosing index zero to be sorted and assuming the right side is unsorted.
 
 `numberToInsert = array\[1\]` and `j = 0`
 
-
-We then ask if `array[j] > numberToInsert && j >= 0 // this is false`
+In the for loop we ask if `array[j] > numberToInsert && j >= 0 // this is false`
 
 So we move out of the loop and insert, now 3 is part of the sorted array
 
-array[1] = numberToInsert;
+array\[1\] = numberToInsert;
 
 `[1,3|-1,5,6]`
 
 ### Second iteration of outer loop
+
+`[1,3|-1,5,6]`
 
 Now `numberToInsert = array\[2\]` and `j = 1`
 
@@ -101,15 +102,17 @@ Now `numberToInsert = array\[2\]` and `j = 1`
 
 `[1,3|-1,5,6]`
 
-We then ask if `array[1] > NumberToInsert && j >= 0 // this is true`
+We then ask if `array[1] > numberToInsert && j >= 0 // this is true`
 
-So we move to the array\[j\] one to the right
+So we move array\[j\] one to the right
 
-`[1, |3,5,6]` // notice array\[1\] is now empty
+`[1, |3,5,6]` // notice array\[1\] is now *empty*
+
+the -1 is on to with the `numberToInsert` variable.
 
 #### Second iteration of inner loop
 
-We then ask if `array[0] > NumberToInsert && j >= 0 // this is true`
+We then ask if `array[0] > numberToInsert && j >= 0 // this is true`
 
 so we move to the array\[0\] to the right
 
@@ -117,7 +120,7 @@ so we move to the array\[0\] to the right
 
 #### Third iteration of inner loop
 
-We then ask if `array[-1] > NumberToInsert && j >= 0 // this is false`
+We then ask if `array[-1] > numberToInsert && j >= 0 // this is false`
 
 j is not &gt;= 0 so we don't do anything and move on from the loop
 
@@ -131,9 +134,9 @@ Now `numberToInsert = array\[3\]` and `j = 2`
 
 #### First Iteration of inner loop
 
-`[-1,1,3|5,6]` // notice the array is already sorted but insertion sort doesn't know that
+`[-1,1,3|5,6]` // notice the array is already sorted, but the algorithm (Insertion Sort) doesn't know that.
 
-We then ask if `array[2] > NumberToInsert && j >= 0 // this is false`
+We then ask if `array[2] > numberToInsert && j >= 0 // this is false`
 
 So we insert at 5, 5 is already there
 
@@ -141,12 +144,14 @@ So we insert at 5, 5 is already there
 
 now the array looks like that^
 
-// the last iteration of the is going to look very similarly as this iteration.
+//The last iteration of the is going to look very similar as this iteration.
 
-**Comment any questions and let me know how I can improve my explanation. This algo took me longer to understand than I thought it would so if your struggling know I did too!**
+**Comment on any questions and let me know how I can improve my explanation. This algo took me longer to understand than I thought it would so if you are struggling, know I did too!**
 
 ## Resources and Others:
 
-Great explanation from Brain Holt on his Frontend Masters course website includes an explanation of the big o complexity for this algorithm [Insertion Sort Problem](https://btholt.github.io/complete-intro-to-computer-science/insertion-sort)
+Great explanation from Brain Holt on his Frontend Masters course website includes an explanation of the big o complexity of this algorithm [Insertion Sort Problem](https://btholt.github.io/complete-intro-to-computer-science/insertion-sort)
 
-Also take a look at a visualization at [7 VisuAlgo.net](https://visualgo.net/en/sorting)
+Also, take a look at a visualization at [7 VisuAlgo.net](https://visualgo.net/en/sorting)
+
+
