@@ -4,7 +4,7 @@ import MySiteLayout from "../layouts/IndexLayout.astro";
 
 <MySiteLayout title="Skillz Page">
   <section class="w-full p-4 text-center flex flex-col items-center">
-    <h2 class="font-semibold text-2xl py-1">Tech stack</h2>
+    <h2 class="font-semibold text-3xl py-1">Tech stack</h2>
 
     <div class="flex flex-wrap gap-4 text-sm py-2 justify-center">
       <div
@@ -34,9 +34,20 @@ import MySiteLayout from "../layouts/IndexLayout.astro";
       </div>
     </div>
   </section>
-  <section class="w-full h-screen flex justify-center">
+  <section class="flex justify-center">
     <iframe
       src="https://dhhz19.github.io/CV/Resume_One.html"
-      class="w-4/5 max-w-3xl"></iframe>
+      class="w-4/5 max-w-3xl hidden sm:block h-screen"></iframe>
+    <div class="sm:hidden flex flex-col">
+      <h3 class="text-center text-bold text-2xl">View My Work Experience</h3>
+      <button class="flex self-center mt-4">
+        <a
+          href="https://dhhz19.github.io/CV/Resume_One.html"
+          class="bg-white text-black text-center transition ease-in duration-300 pt-2 pr-4 pb-2 pl-4 border border-solid shadow-7-0-7-2 shadow-blue button-press-in self-center"
+        >
+          View CV
+        </a>
+      </button>
+    </div>
   </section>
 </MySiteLayout>
