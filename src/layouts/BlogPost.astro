@@ -55,7 +55,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <hr />
         <slot />
       </article>
-      <div class="w-full flex-col md:flex pt-10 prose">
+      <div class="w-full flex-col md:flex pt-10 prose dark:prose-invert">
         <h4 class="text-3xl font-bold text-center">Other posts 👇🏽</h4>
         {
           posts.map((post) =>
