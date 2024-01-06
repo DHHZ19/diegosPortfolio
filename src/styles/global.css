@@ -10,9 +10,6 @@ body {
 :root {
   --darkmode-color: #131415;
 }
-a:hover {
-  text-shadow: 0 0 5px #ffffff;
-}
 .shadow-7-0-7-2 {
   box-shadow: 7px 7px 0 2px black;
 }
@@ -26,7 +23,6 @@ a:hover {
 .card--techstack {
   align-items: center;
 }
-
 
 @media (prefers-color-scheme: dark) {
   .shadow-7-0-7-2 {
