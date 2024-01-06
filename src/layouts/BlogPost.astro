@@ -40,8 +40,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
   <body class="dark:bg-[color:var(--darkmode-color)] dark:text-white h-full">
     <Header />
-    <main class="flex flex-col w-full items-center text-xl">
-      <article class="prose dark:prose-invert w-full px-5 md:px-0 text-lg">
+    <main class="flex flex-col w-full items-center text-lg">
+      <article class="prose dark:prose-invert w-full px-5 md:px-0">
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
         <h1 class="title">{title}</h1>
         <FormattedDate date={pubDate} />
@@ -55,24 +55,27 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <hr />
         <slot />
       </article>
-      <div class="w-full prose dark:prose-invert pt-10">
-        <span>
-          <span class="text-3xl font-bold">Other posts 👇🏽</span>
-          {
-            posts.map((post) =>
-              post.data.title !== title ? (
-                <li class="list-none">
-                  <a href={`/blog/${post.slug}/`}>
-                    {post.data.title}
-                    <span />
-                  </a>
-                </li>
-              ) : (
-                " "
-              )
+      <div class="w-full flex-col md:flex pt-10 prose">
+        <h4 class="text-3xl font-bold text-center">Other posts 👇🏽</h4>
+        {
+          posts.map((post) =>
+            post.data.title !== title ? (
+              <li class="list-none border-solid border[374151] border-2 mx-auto rounded-2xl w-5/6 p-4">
+                <a href={`/blog/${post.slug}/`}>
+                  <img
+                    src={post.data?.heroImage}
+                    alt=""
+                    class="w-full  rounded-2xl"
+                  />
+                  <span>{post.data.title}</span>
+                </a>
+                <p>{post.data.description}</p>
+              </li>
+            ) : (
+              " "
             )
-          }
-        </span>
+          )
+        }
       </div>
     </main>
     <Footer />
