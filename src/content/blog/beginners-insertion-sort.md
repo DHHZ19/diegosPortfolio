@@ -41,7 +41,8 @@ function insertionSort(array) {
         let j;
         // does the insertion when either array[j] > numberToInsert or j >= 0 // j  >= 0 is checking if j every goes out of bounds if it is we shouldn't keep moving things to the right
         for(j = i - 1; array[j] > numberToInsert && j >= 0; j--){
-          // moves the number to the right
+        // walk number (array[j]) greater than numberToInsert to the right
+        // effecively makes room for numberToInsert to be inserted if above condition is falsy
           array[j + 1] = array[j]
         }
         // does the insertion
