@@ -21,8 +21,10 @@ const posts = (await getCollection("blog")).sort(
         font-style: italic;
         color: #595959;
       }
-      ul li a:visited span {
+      ul li a:visited span,
+      ul li a:visited svg {
         color: #8e32dc;
+        stroke: #8e32dc;
       }
     </style>
   </head>
@@ -42,7 +44,9 @@ const posts = (await getCollection("blog")).sort(
                   Writing on software development, begineer friendly.
                 </h1><p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                   Tutorials on projects like AI, Web development, backend
-                  development. As well as explanations on concepts like data structures & algorthims all collected in nonchronologically order.
+                  development. As well as explanations on concepts like data
+                  structures & algorthims all collected in nonchronologically
+                  order.
                 </p>
               </header>
             </div>
@@ -70,7 +74,24 @@ const posts = (await getCollection("blog")).sort(
                   <p class="p-2 text-sm text-neutral-600 dark:text-neutral-400">
                     {post.data.description}
                   </p>
-                  <span class="pl-2">Read blog</span>
+                  <span class="pl-2">
+                    Read More
+                    <svg
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="inline-block stroke-slate-50"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 12H18M18 12L13 7M18 12L13 17"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>{" "}
+                  </span>
                 </a>
               </li>
             ))
