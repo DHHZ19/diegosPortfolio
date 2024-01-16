@@ -1,6 +1,6 @@
 <div class="flex justify-end md:flex-1" id="themeToggle">
   <svg
-    class="sun inline-block cursor-pointer"
+    class="sun inline-block cursor-pointer hover:fill-purple-600"
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
     y="0px"
@@ -19,7 +19,7 @@
   </svg>
 
   <svg
-    class="moon inline-block cursor-pointer"
+    class="moon inline-block cursor-pointer hover:fill-purple-600"
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
     y="0px"
@@ -32,11 +32,6 @@
     ></path>
   </svg>
 </div>
-<style>
-  svg:hover {
-    filter: invert(0.5) sepia(1) hue-rotate(200deg) saturate(4) brightness(1);
-  }
-</style>
 <script is:inline>
   sunIcon = document.querySelector(".sun");
   moonIcon = document.querySelector(".moon");
