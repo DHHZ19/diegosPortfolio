@@ -10,7 +10,7 @@ import ThemeToggle from "./ThemeToggle.astro";
       <button
         id="mobile-menu-button"
         type="button"
-        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-stone-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+        class="relative inline-flex items-center justify-center rounded-md p-2 hover:bg-stone-200 dark:bg-stone-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white dark:focus:ring-stone-200"
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
@@ -22,8 +22,7 @@ import ThemeToggle from "./ThemeToggle.astro";
               Menu open: "hidden", Menu closed: "block"
             -->
         <svg
-          class="block h-6 w-6"
-          fill="none"
+          class="block h-6 w-6 dark:stroke-white"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="black"
@@ -41,8 +40,7 @@ import ThemeToggle from "./ThemeToggle.astro";
               Menu open: "block", Menu closed: "hidden"
             -->
         <svg
-          class="hidden h-6 w-6"
-          fill="none"
+          class="hidden h-6 w-6 dark:stroke-white"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="black"
