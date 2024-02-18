@@ -7,6 +7,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -42,7 +43,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <Header />
     <main class="flex flex-col w-full items-center text-lg">
       <article class="prose dark:prose-invert w-full px-5 md:px-0">
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+        {heroImage && <Image width={720} height={360} src={heroImage} alt="" loading="eager"/>}
         <h1 class="title">{title}</h1>
         <FormattedDate date={pubDate} />
         {
