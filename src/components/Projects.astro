@@ -1,6 +1,6 @@
 ---
 import data from "../data.json";
-
+import { Image } from "astro:assets";
 const { title = await Astro.slots.render("title") } = Astro.props;
 ---
 
@@ -22,7 +22,7 @@ const { title = await Astro.slots.render("title") } = Astro.props;
             <section class="flex w-full flex-col md:gap-y-0 gap-y-4 inset-1 leading-8 ">
               <span class="text-lg font-bold py-3">{subitems.title}</span>
               <div class="w-fit gap-x-6 flex-1">
-                <img class="h-32 w-32 rounded-lg" src={subitems.img} alt="" />
+                <Image class="h-32 w-32 rounded-lg" width="128" height="128" src={subitems.img} alt="" loading="eager"/>
               </div>
               <div class="basis-1/2 max-h-24 py-3 text-base">
                 <p set:html={subitems.description} />
