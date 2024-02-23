@@ -5,7 +5,7 @@ content:
     type: collection
     path: src/content/blog
     view: 
-      fields: [title, date]
+      fields: [title, pubDate]
     fields:
         - {name: title, label: Title, type: string } 
         - {name: description, label: Description, type: string}
