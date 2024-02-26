@@ -11,11 +11,11 @@ There are two ways to host a website on github one way is to give a special name
 
 Create a github account if you don't have one already and navigate to the repositories tab
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1707270428975/bdea2f51-f890-44b1-9cf1-ab527aaddd9c.png align="center")
+<img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1707270428975/bdea2f51-f890-44b1-9cf1-ab527aaddd9c.png" align="center"/>
 
 Once you're on the page you'll see a `new` button on the top right, go ahead and click on it.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1707270489879/038b76fe-9470-43c0-98eb-50cfabaf89f8.png align="center")
+<img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1707270489879/038b76fe-9470-43c0-98eb-50cfabaf89f8.png" align="center"/>
 
 Now this is where the magic happens, under the `Repository Name` section you'll want to type in the name of your account **exactly** followed by `.github.io` so that would be `<user>.github.io`  
 Note: If the first part of your repository name doesn’t exactly match your username, it will not work.
@@ -49,7 +49,7 @@ Run `git init`, this will initialize a git repository `git add .` will add all t
 
 Now you should have all of your code on github.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1707272960289/6b28a651-7925-4a23-9e1b-1e49ea64f2a7.png align="center")
+<img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1707272960289/6b28a651-7925-4a23-9e1b-1e49ea64f2a7.png" align="center"/>
 
 Within your repository navigate to where it says `main` and click on it within the search it will allow you to create a branch, make new branch called `gh-pages`. And that's it your website is now live! Your website will be available at `<user>.github.io/<repo>/`
 
