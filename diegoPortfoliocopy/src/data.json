@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Virtue Construction",
+    "img": "/virtueConstruction.png",
+    "description": "Tech used: React, Tailwind, AWS",
+    "href": "https://www.virtueconstruction.info/#"
+  },
+  {
+    "title": "Cindy Beauty",
+    "img": "/cindyBeautyWeb.png",
+    "description": "Teach used: React/Astro, SCSS",
+    "href": "https://cindybeauty.netlify.app/"
+  }
+]
