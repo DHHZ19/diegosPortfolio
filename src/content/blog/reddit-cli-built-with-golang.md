@@ -1,15 +1,15 @@
 ---
-title: "Reddit Cli Built With Golang"
-description: "A step by step guide"
-pubDate: "3 19 2024"
+title: Reddit Cli Built With Golang
+description: A step by step guide
+pubDate: 3 19 2024
 heroImage: https://diegocode.tech/golang.jpeg
 ---
-
 Overview: You will lean how to get json data form the reddit api and open the Reddit post in your default web browser.
 
 Prerequisites:
 
-- Go run time
+*   Go run time
+    
 
 To download the go runtime visit this [link.](https://go.dev/doc/install)
 
@@ -42,9 +42,12 @@ func main () {
 }
 ```
 
-- In the code above we declare a package name this is go's way of grouping functions in a file.
-- we also import import the "fmt" package, this has functions for formatting text, as well as ways of printing to the console.
-- finally, the main function uses the `Println` function to print "hello, world" to the console.
+*   In the code above we declare a package name this is go's way of grouping functions in a file.
+    
+*   we also import import the "fmt" package, this has functions for formatting text, as well as ways of printing to the console.
+    
+*   finally, the main function uses the `Println` function to print "hello, world" to the console.
+    
 
 To run go code execute `go run main.go` in the command line.
 
@@ -95,12 +98,14 @@ import (
 )
 ```
 
-- The `net/http` adds go package to allow us to make a get request.
-- The `log` package will be used to for logging.
-
-- `math/rand` will be used to generate a random number.
-
-- `encoding/json` allows us to implement encoding and decoding of JSON.
+*   The `net/http` adds go package to allow us to make a get request.
+    
+*   The `log` package will be used to for logging.
+    
+*   `math/rand` will be used to generate a random number.
+    
+*   `encoding/json` allows us to implement encoding and decoding of JSON.
+    
 
 Delete everything within the main function and write the following code
 
@@ -131,33 +136,37 @@ The above code allows to make a HTTP GET request for the reddit post data, `http
 
 The next line `defer resp.Body.Close()` closes the response body when we're finished using it which is why the `defer` keyword is used.
 
-`bodyBytes, _ := io.ReadAll(resp.Body)` does xxx
+`bodyBytes, _ := io.ReadAll(resp.Body)` reads teh data from the response body and returns it.
 
-The following code `err = json.Unmarshal([]byte(bodyBytes), &data)` will decode the json data and point the decoded json to the `data` variable that is a RedditPostData struct.
+`err = json.Unmarshal([]byte(bodyBytes), &data)` decodes the json data and point the decoded json to the `data` variable that is a RedditPostData struct.
 
 **Set up a flag to print Reddit post title and URL**
 
+To your imports add `"flag"` package
+
 ```go
-
-
-	printPtr := flag.Bool("print", false, "a bool")
-	flag.Parse()
-
-
+    printPtr := flag.Bool("print", false, "a bool")
+    flag.Parse()
 ```
 
-Here we declare a print flag boolean with a default value "print" and a short description. This flag.Bool function returns a boolean pointer not a boolean value.
+Here we declare a print flag boolean with a default value "print" and a short description. The flag.Bool function returns a boolean pointer not a boolean value.
 
 **Finally open the post in your web browser or print the title and url to the console**
 
-```go
-	// if -print flag is passed log the reddit post title and URL
-	if *printPtr {
-		fmt.Printf("The Reddit Post Title is:  %v\n The permalink is https://reddit.com%v\n", data.Data.Children[randomIndex].Data.Title, data.Data.Children[randomIndex].Data.Permalink)
-	} else {
-		randomPostPermaLink := data.Data.Children[randomIndex].Data.Permalink
-		postURL := fmt.Sprintf("%s%s", "https://reddit.com", randomPostPermaLink)
-		browser.OpenURL(postURL)
-	}
+To your imports add `"github.com/pkg/browser"` package this package will allow us to open a file in your default web browser.
 
+```go
+    // if -print flag is passed log the reddit post title and URL
+    if *printPtr {
+        fmt.Printf("The Reddit Post Title is:  %v\n The permalink is https://reddit.com%v\n", data.Data.Children[randomIndex].Data.Title, data.Data.Children[randomIndex].Data.Permalink)
+    } else {
+        randomPostPermaLink := data.Data.Children[randomIndex].Data.Permalink
+        postURL := fmt.Sprintf("%s%s", "https://reddit.com", randomPostPermaLink)
+        browser.OpenURL(postURL)
+    }
 ```
+
+The above code checks the the `printPtr` if its true it prints the reddit post title and url. Otherwise it constructs the post URL using the `Sprintf`function.
+
+
+All done! View the full source code [here](https://github.com/DHHZ19/goRedditCLI/blob/main/main.go).
