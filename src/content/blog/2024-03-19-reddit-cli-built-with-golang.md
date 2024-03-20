@@ -133,6 +133,36 @@ randomIndex := rand.Intn(len(data.Data.Children))
 ```
 The above code allows to make a HTTP GET request for the reddit post data, `http.Get()` either returns a response with the the JSON data or throws an error with is `resp, err` is there. If the err variable is not nil then we log the error.
 
-d
+The next line `defer resp.Body.Close()` closes the response body when we're finished using it which is why the `defer` keyword is used.
+
+`bodyBytes, _ := io.ReadAll(resp.Body)` does xxx
+
+
+The following code `err = json.Unmarshal([]byte(bodyBytes), &data)` will decode the json data and point the decoded json to the `data` variable that is a RedditPostData struct.
 
 **Set up a flag to print Reddit post title and URL**
+
+```go
+
+
+	printPtr := flag.Bool("print", false, "a bool")
+	flag.Parse()
+
+
+```
+Here we declare a print flag boolean with a default value "print" and a short description. This flag.Bool function returns a boolean pointer not a boolean value.
+
+**Finally open the post in your web broswer or print the title and url to the console**
+
+```go
+	// if -print flag is passed log the reddit post title and URL
+	if *printPtr {
+		fmt.Printf("The Reddit Post Title is:  %v\n The permalink is https://reddit.com%v\n", data.Data.Children[randomIndex].Data.Title, data.Data.Children[randomIndex].Data.Permalink)
+	} else {
+		randomPostPermaLink := data.Data.Children[randomIndex].Data.Permalink
+		postURL := fmt.Sprintf("%s%s", "https://reddit.com", randomPostPermaLink)
+		browser.OpenURL(postURL)
+	}
+
+```
+
