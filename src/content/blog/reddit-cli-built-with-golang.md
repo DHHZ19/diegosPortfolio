@@ -7,9 +7,9 @@ heroImage: https://diegocode.tech/golang.png
 
 Overview: You will lean how to get json data form the reddit api and open the Reddit post in your default web browser.
 
-Prerequisites:
+**Prerequisites:**
 
-- Go run time
+- Go runtime
 
 To download the go runtime visit this [link.](https://go.dev/doc/install)
 
