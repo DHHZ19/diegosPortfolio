@@ -1,7 +1,7 @@
 ---
-title: Reddit Cli Built With Golang
-description: A step by step guide
-pubDate: 03 19 2024
+title: "Reddit Cli Built With Golang"
+description: "A step by step guide"
+pubDate: "3 19 2024"
 heroImage: https://diegocode.tech/golang.jpeg
 ---
 
