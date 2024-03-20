@@ -4,12 +4,12 @@ description: A step by step guide
 pubDate: 3 19 2024
 heroImage: https://diegocode.tech/golang.jpeg
 ---
+
 Overview: You will lean how to get json data form the reddit api and open the Reddit post in your default web browser.
 
 Prerequisites:
 
-*   Go run time
-    
+- Go run time
 
 To download the go runtime visit this [link.](https://go.dev/doc/install)
 
@@ -42,12 +42,9 @@ func main () {
 }
 ```
 
-*   In the code above we declare a package name this is go's way of grouping functions in a file.
-    
-*   we also import import the "fmt" package, this has functions for formatting text, as well as ways of printing to the console.
-    
-*   finally, the main function uses the `Println` function to print "hello, world" to the console.
-    
+- In the code above we declare a package name this is go's way of grouping functions in a file.
+- we also import import the "fmt" package, this has functions for formatting text, as well as ways of printing to the console.
+- finally, the main function uses the `Println` function to print "hello, world" to the console.
 
 To run go code execute `go run main.go` in the command line.
 
@@ -98,14 +95,10 @@ import (
 )
 ```
 
-*   The `net/http` adds go package to allow us to make a get request.
-    
-*   The `log` package will be used to for logging.
-    
-*   `math/rand` will be used to generate a random number.
-    
-*   `encoding/json` allows us to implement encoding and decoding of JSON.
-    
+- The `net/http` adds go package to allow us to make a get request.
+- The `log` package will be used to for logging.
+- `math/rand` will be used to generate a random number.
+- `encoding/json` allows us to implement encoding and decoding of JSON.
 
 Delete everything within the main function and write the following code
 
@@ -168,5 +161,10 @@ To your imports add `"github.com/pkg/browser"` package this package will allow 
 
 The above code checks the the `printPtr` if its true it prints the reddit post title and url. Otherwise it constructs the post URL using the `Sprintf`function.
 
+**Final steps**
+
+run `go mod tidy`
+
+run `go run main.go`
 
 All done! View the full source code [here](https://github.com/DHHZ19/goRedditCLI/blob/main/main.go).
