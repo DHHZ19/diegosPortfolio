@@ -5,7 +5,7 @@ pubDate: 3 19 2024
 heroImage: https://diegocode.tech/golang.png
 ---
 
-Overview: You will lean how to get json data form the reddit api and open the Reddit post in your default web browser.
+**Overview:** You will lean how to get json data form the reddit api and open the Reddit post in your default web browser.
 
 **Prerequisites:**
 
