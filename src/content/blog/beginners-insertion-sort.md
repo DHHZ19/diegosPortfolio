@@ -32,25 +32,24 @@ function insertionSort(array) {
 }
 // commented
 function insertionSort(array) {
-    // We make a double for loop
-    // Notice the index starts at 1 leaving index 0 as the sorted array
-    for(let i = 1; i < array.length; i++){
-        // the number to insert will always be the number we currently are on in this loop
-        let numberToInsert = array[i]
-         // We also initialize j
-        let j;
-        // does the insertion when either array[j] > numberToInsert or j >= 0 // j  >= 0 is checking if j every goes out of bounds if it is we shouldn't keep moving things to the right
-        for(j = i - 1; array[j] > numberToInsert && j >= 0; j--){
-        // walk number (array[j]) greater than numberToInsert to the right
-        // effecively makes room for numberToInsert to be inserted if above condition is falsy
-          array[j + 1] = array[j]
-        }
-        // does the insertion
-        array[j + 1] = numberToInsert
-
+  // We make a double for loop
+  // Notice the index starts at 1 leaving index 0 as the sorted array
+  for (let i = 1; i < array.length; i++) {
+    // the number to insert will always be the number we currently are on in this loop
+    let numberToInsert = array[i];
+    // We also initialize j
+    let j;
+    // does the insertion when either array[j] > numberToInsert or j >= 0 // j  >= 0 is checking if j every goes out of bounds if it is we shouldn't keep moving things to the right
+    for (j = i - 1; array[j] > numberToInsert && j >= 0; j--) {
+      // walk number (array[j]) greater than numberToInsert to the right
+      // effecively makes room for numberToInsert to be inserted if above condition is falsy
+      array[j + 1] = array[j];
     }
-    return array
+    // does the insertion
+    array[j + 1] = numberToInsert;
   }
+  return array;
+}
 ```
 
 ## Explanation
@@ -107,7 +106,7 @@ We then ask if `array[1] > numberToInsert && j >= 0 // this is true`
 
 So we move array\[j\] one to the right
 
-`[1, |3,5,6]` // notice array\[1\] is now *empty*
+`[1, |3,5,6]` // notice array\[1\] is now _empty_
 
 the -1 is on to with the `numberToInsert` variable.
 
@@ -154,5 +153,3 @@ now the array looks like that^
 Great explanation from Brain Holt on his Frontend Masters course website includes an explanation of the big o complexity of this algorithm [Insertion Sort Problem](https://btholt.github.io/complete-intro-to-computer-science/insertion-sort)
 
 Also, take a look at a visualization at [7 VisuAlgo.net](https://visualgo.net/en/sorting)
-
-

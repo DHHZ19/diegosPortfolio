@@ -4,11 +4,11 @@ content:
     label: Posts
     type: collection
     path: src/content/blog
-    view: 
+    view:
       fields: [title, pubDate]
     fields:
-        - {name: title, label: Title, type: string } 
-        - {name: description, label: Description, type: string}
-        - {name: pubDate, label: Date, type: string}
-        - {name: heroImage, label: Image, type: image}
-        - {name: body, label: Body, type: rich-text}
+      - { name: title, label: Title, type: string }
+      - { name: description, label: Description, type: string }
+      - { name: pubDate, label: Date, type: string }
+      - { name: heroImage, label: Image, type: image }
+      - { name: body, label: Body, type: rich-text }

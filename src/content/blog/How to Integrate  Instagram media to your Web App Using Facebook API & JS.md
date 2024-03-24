@@ -70,7 +70,7 @@ heroImage: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/WUmb_eBrpj
       const response = await fetch(
         `https://graph.instagram.com/me/media?fields=id,username,media_url,media_type,timestamp,caption,permalink,thumbnail_url&access_token=${
           import.meta.env.INSTAGRAM_API_KEY
-        }`
+        }`,
       );
 
       const data = await response.json();

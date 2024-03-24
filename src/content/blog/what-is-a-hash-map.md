@@ -4,9 +4,10 @@ description: "hash tables explained in Javascript"
 pubDate: "11 14 2023"
 heroImage: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/p6ac4ss5vVM/upload/935352980792dfadaab55f17e6cc8d11.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp
 ---
+
 Otherwise known as hash map, hash, and dictionary.
 
-A Hash Table is a data structure that organizes data for **fast lookups;** finding a value for a given key is fast with hash tables on *average*.
+A Hash Table is a data structure that organizes data for **fast lookups;** finding a value for a given key is fast with hash tables on _average_.
 
 A hash table is much like an array, except that it lets you use a special key rather than have to use a sequential index to find a given value.
 
@@ -55,7 +56,7 @@ A more efficient approach is to use a Hash table. The runtime can be significant
 ```javascript
 function findPair(nums, target) {
   let numsSeen = new Set();
- 
+
   for (let i = 0; i < nums.length; i++) {
     // subtract the first nums[i] from the target giving the second number
     // that will equal to the sum
@@ -87,4 +88,3 @@ The unordered nature of a Hash Table makes for costly lookups if say you're tryi
 
 Hope you found this helpful, happy coding!
 ![A penguin looking back at the camera after writing code.](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
-
