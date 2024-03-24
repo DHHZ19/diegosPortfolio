@@ -1,3 +1,5 @@
+# [Portfolio Website](https://diecode.tech) + [Software Development Blog](https://diegocode.tech/blog)
+
 ## Project Structure
 
 ```
