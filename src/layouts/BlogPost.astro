@@ -20,6 +20,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <BaseHead title={title} description={description} />
     <meta property="og:image" content={heroImage} />
 
+    <meta name="author" content="Diego Hernandez">
+    
     <meta property="og:title" content={title} />
 
     <meta property="og:description" content={description} />
@@ -41,42 +43,42 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
   <script>
     
-    const copyButtonLabel = "Copy Code";
+  const copyButtonLabel = "Copy Code";
 
-// use a class selector if available
-let blocks = document.querySelectorAll("pre");
+  // use a class selector if available
+  let blocks = document.querySelectorAll("pre");
 
-blocks.forEach((block) => {
-  block.classList.add("relative")
-  // only add button if browser supports Clipboard API
-  if (navigator.clipboard) {
-    let button = document.createElement("button")
-    button.classList.add("copy-button", "block", "absolute", "top-0", "right-0", "py-2", "px-4", )
+  blocks.forEach((block) => {
+    block.classList.add("relative")
+    // only add button if browser supports Clipboard API
+    if (navigator.clipboard) {
+      let button = document.createElement("button")
+      button.classList.add("copy-button", "block", "absolute", "top-0", "right-0", "py-2", "px-4", )
 
-    button.innerText = copyButtonLabel;
-    block.appendChild(button);
+      button.innerText = copyButtonLabel;
+      block.appendChild(button);
 
-    button.addEventListener("click", async () => {
-      await copyCode(block, button);
-    });
+      button.addEventListener("click", async () => {
+        await copyCode(block, button);
+      });
+    }
+  });
+
+  async function copyCode(block, button) {
+    let code = block.querySelector("code");
+    let text = code.innerText;
+
+    await navigator.clipboard.writeText(text);
+
+    // visual feedback that task is completed
+    button.innerText = "Code Copied!";
+    button.classList.add("text-md", "text-green-300")
+
+    setTimeout(() => {
+      button.innerText = copyButtonLabel;
+      button.classList.remove("text-md", "text-green-300")
+    }, 800);
   }
-});
-
-async function copyCode(block, button) {
-  let code = block.querySelector("code");
-  let text = code.innerText;
-
-  await navigator.clipboard.writeText(text);
-
-  // visual feedback that task is completed
-  button.innerText = "Code Copied!";
-  button.classList.add("text-md", "text-green-300")
-
-  setTimeout(() => {
-    button.innerText = copyButtonLabel;
-    button.classList.remove("text-md", "text-green-300")
-  }, 800);
-}
   </script>
   <body class="dark:bg-[color:var(--darkmode-color)] dark:text-white h-full">
     <Header />
