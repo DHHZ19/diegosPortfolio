@@ -70,15 +70,17 @@ async function copyCode(block, button) {
 
   // visual feedback that task is completed
   button.innerText = "Code Copied!";
+  button.classList.add("text-md", "text-green-300")
 
   setTimeout(() => {
     button.innerText = copyButtonLabel;
+    button.classList.remove("text-md", "text-green-300")
   }, 800);
 }
   </script>
   <body class="dark:bg-[color:var(--darkmode-color)] dark:text-white h-full">
     <Header />
-    <main class="flex flex-col w-full items-center text-lg">
+    <main class="flex flex-col w-full items-center text-lg ">
       <article class="prose dark:prose-invert w-full px-5 md:px-0">
         {heroImage && <Image width={720} height={360} src={heroImage} alt="" loading="eager"/>}
         <h1 class="title">{title}</h1>
