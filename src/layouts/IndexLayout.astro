@@ -30,6 +30,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <slot />
     </main>
     <Footer />
+    <script defer>
+      var form = document.querySelector('.pageclip-form')
+      window.Pageclip.form(form, {
+      successTemplate: '<span>stop</span>'
+      })
+
+    </script>
     <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
   </body>
 </html>
