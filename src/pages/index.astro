@@ -74,9 +74,8 @@ import ContactForm from "../components/ContactForm.astro";
       >
     </div>
   </section>
-  <section class="mx-auto w-full max-w-7xl lg:px-12 p-5">
+  <section class="mx-auto flex flex-col sm:flex-row w-full max-w-7xl lg:px-12 p-5">
     <ol class="">
-      <li><ContactForm/></li>
       <li>
         <span class="text-2xl font-bold">Currently</span>
         <li class="pl-4">Front End Developer at Outsell</li>
@@ -89,6 +88,7 @@ import ContactForm from "../components/ContactForm.astro";
         <li class="pl-4">Freelance Dev</li>
       </li>
     </ol>
+    <ContactForm />
   </section>
   <Projects title="Projects" />
 </MySiteLayout>
