@@ -141,7 +141,7 @@ Here we declare a print flag boolean with a default value "print" and a short de
 
 ## Finally open the post in your web browser or print the title and url to the console
 
-To your imports add `"github.com/pkg/browser"` package this package will allow us to open a file in your default web browser.
+To your imports add `"github.com/pkg/f"` package this package will allow us to open a file in your default web browser.
 
 The full package list should now look like
 
@@ -175,6 +175,12 @@ The above code checks the the `printPtr` if its true it prints the reddit post t
 ## Final steps
 
 run `go mod tidy`
+
+run `go install`
+
+run `export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))` this will make running binaries easy see go [docs](https://go.dev/doc/code)
+
+now you should be able to run `reddit` in you cli and it will run the program in any directory. Note: if this doesn't work it the command will be what is in your `go.mod` file.
 
 run `go run main.go`
 
