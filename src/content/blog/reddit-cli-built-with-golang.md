@@ -2,7 +2,7 @@
 title: Reddit CLI Built With Golang
 description: A step by step guide
 pubDate: 3 19 2024
-heroImage: https://diegohdev.com/golang.png
+heroImage: https://www.diegohdev.com/golang.png
 ---
 
 **Overview:** You will learn how to get json data form the reddit api and open the Reddit post in your default web browser.
