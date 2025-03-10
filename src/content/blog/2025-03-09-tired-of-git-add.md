@@ -4,6 +4,7 @@ description: Here’s a Faster Way to Stage Your Changes
 pubDate: 03 09 2025
 heroImage: https://www.diegohdev.com/gitlogs.jpg
 ---
+
 Using Git is a big part of every developer's workflow whether they use a GUI or the terminal. Wouldn't making things a little faster make it a little more fun?
 
 ### \`git commit -am\`: A Quick Time-Saver
@@ -22,4 +23,4 @@ I hope you found this helpful. I haven't posted in a while so this is me getting
 
 Happy coding!
 
-[https://media.giphy.com/media/nGMnDqebzDcfm/giphy.gif?cid=ecf05e47jxlg9eu2j3bv1l8hqu7e79fxikgnpo1s7gjttj22&ep=v1\_gifs\_search&rid=giphy.gif&ct=g](https://media.giphy.com/media/nGMnDqebzDcfm/giphy.gif?cid=ecf05e47jxlg9eu2j3bv1l8hqu7e79fxikgnpo1s7gjttj22&ep=v1_gifs_search&rid=giphy.gif&ct=g)
+<iframe src="https://giphy.com/embed/nGMnDqebzDcfm" width="480" height="475" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/animation-computer-programmers-nGMnDqebzDcfm">via GIPHY</a></p>
