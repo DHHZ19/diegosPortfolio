@@ -2,7 +2,7 @@
 title: "Tired of 'git add .'? "
 description: Here’s a Faster Way to Stage Your Changes
 pubDate: 03 09 2025
-heroImage: diegohdev.com/gitlogs.jpg
+heroImage: https://www.diegohdev.com/gitlogs.jpg
 ---
 
 Using Git is a big part of every developer's workflow whether they use a GUI or the terminal. Wouldn't making things a little faster make it a little more fun?
