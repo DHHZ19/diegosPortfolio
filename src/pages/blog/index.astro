@@ -5,13 +5,13 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -45,8 +45,7 @@ const posts = (await getCollection("blog")).sort(
                 </h1><p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                   Tutorials on projects like AI, Web development, backend
                   development. As well as explanations on concepts like data
-                  structures & algorthims all collected in chronological 
-                  order.
+                  structures & algorthims all collected in chronological order.
                 </p>
               </header>
             </div>
@@ -67,7 +66,7 @@ const posts = (await getCollection("blog")).sort(
                       width="224"
                       height="224"
                       src={post.data.heroImage}
-                      loading={idx < 2 ? 'eager' : 'lazy'}
+                      loading={idx < 2 ? "eager" : "lazy"}
                       alt=""
                     />
                   ) : (
