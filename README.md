@@ -1,6 +1,6 @@
 # Portfolio Website + Software Development Blog
 
-## Project Structure
+## Project Structures
 
 ```
 ├── public/
