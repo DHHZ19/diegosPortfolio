@@ -1,0 +1,54 @@
+---
+import MySiteLayout from "../layouts/IndexLayout.astro";
+import { Image } from "astro:assets";
+import { SITE_TITLE } from "../consts";
+
+const PAGE_TITLE = "Profile";
+const LINKS = [
+  { title: "Website / Blog", href: "https://www.diegohdev.com/blog" },
+  { title: "LinkedIn", href: "https://linkedin.com/in/diegohernandezcode" },
+  { title: "GitHub", href: "https://github.com/DHHZ19" },
+  { title: "Twitter", href: "https://twitter.com/DiegoCode_" },
+  { title: "Bluesky", href: "https://bsky.app/profile/diegohdev.com" },
+];
+---
+
+<MySiteLayout title={PAGE_TITLE}>
+  <main class="min-h-screen flex flex-col items-center justify-start py-20">
+    <Image
+      src="/profilepic.png"
+      alt="diego"
+      class="rounded-full object-cover border-2 border-purple-600"
+      width={120}
+      height={120}
+      loading="eager"
+    />
+
+    <h1 class="mt-4 text-2xl font-bold">{SITE_TITLE}</h1>
+    <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">
+      Software Engineer
+    </p>
+
+    <div
+      class="w-full max-w-md mt-8 space-y-3 px-5 flex flex-col justify-center items-center"
+    >
+      {
+        LINKS.map((link) => (
+          <button class="w-64">
+            <a
+              class="block w-full text-center px-6 py-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover/:bg-purple-600 hover:text-white transition-shadow shadow-sm text-lg"
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.title}
+            >
+              {link.title}
+            </a>
+          </button>
+        ))
+      }
+    </div>
+
+    <p class="mt-6 text-xs text-gray-500">Links open in a new tab</p>
+  </main>
+</MySiteLayout>
