@@ -1,19 +1,21 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import PostCover from "../components/PostCover.astro";
+import Header from "../components/Header.astro";
 import { SITE_TITLE } from "../consts";
+import { coverFor } from "../lib/covers";
 
 type Props = CollectionEntry<"blog">["data"];
-import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
-const { title, description, pubDate, updatedDate } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const hero = coverFor(heroImage);
 const pageTitle = `${title} | ${SITE_TITLE}`;
 const otherPosts = posts.filter((post) => post.data.title !== title);
 ---
@@ -83,7 +85,22 @@ const otherPosts = posts.filter((post) => post.data.title !== title);
     <Header />
     <main class="mx-auto flex w-full max-w-3xl flex-col px-5">
       <article>
-        <PostCover title={title} class="mt-6 w-full rounded-xl" />
+        {
+          hero && (
+            <Image
+              width={720}
+              height={360}
+              widths={[480, 720, 1200]}
+              sizes="(min-width: 48rem) 720px, 100vw"
+              src={hero}
+              fit="cover"
+              alt=""
+              loading="eager"
+              decoding="async"
+              class="mt-6 h-auto max-w-full"
+            />
+          )
+        }
         <h1 class="mt-6 text-3xl font-bold tracking-tight md:text-4xl">{title}</h1>
         <p class="mt-2 text-neutral-700 dark:text-neutral-300">
           <FormattedDate date={pubDate} />
@@ -106,15 +123,30 @@ const otherPosts = posts.filter((post) => post.data.title !== title);
         </h2>
         <ul class="mt-6 flex list-none flex-col gap-4 p-0">
           {
-            otherPosts.map((post) => (
-              <li class="rounded-2xl border-2 border-zinc-300 p-4 dark:border-zinc-700">
-                <a href={`/blog/${post.id}/`} class="block">
-                  <PostCover title={post.data.title} class="w-full rounded-xl" />
-                  <span class="mt-3 block text-xl font-semibold">{post.data.title}</span>
-                </a>
-                <p class="mt-2 text-base">{post.data.description}</p>
-              </li>
-            ))
+            otherPosts.map((post) => {
+              const cover = coverFor(post.data.heroImage);
+              return (
+                <li class="rounded-2xl border-2 border-zinc-300 p-4 dark:border-zinc-700">
+                  <a href={`/blog/${post.id}/`} class="block">
+                    {cover && (
+                      <Image
+                        src={cover}
+                        alt=""
+                        width={cover.width}
+                        height={cover.height}
+                        widths={[480, 800, 1200]}
+                        sizes="(min-width: 48rem) 720px, 100vw"
+                        class="h-auto w-full rounded-2xl"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
+                    <span class="mt-3 block text-xl font-semibold">{post.data.title}</span>
+                  </a>
+                  <p class="mt-2 text-base">{post.data.description}</p>
+                </li>
+              );
+            })
           }
         </ul>
       </section>
