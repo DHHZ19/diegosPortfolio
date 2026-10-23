@@ -61,16 +61,13 @@ const posts = (await getCollection("blog")).sort(
                   >
                     {cover && (
                       <Image
-                        class="w-56 py-2 pl-2"
-                        width={224}
-                        height={224}
-                        widths={[224, 448]}
-                        sizes="224px"
+                        class="w-56 pl-2 py-2"
                         src={cover}
-                        fit="cover"
+                        width={cover.width}
+                        height={cover.height}
+                        alt=""
                         loading={idx < 2 ? "eager" : "lazy"}
                         decoding="async"
-                        alt=""
                       />
                     )}
                     <h2 class="pl-2 pt-1 text-xl font-bold leading-snug">{post.data.title}</h2>
