@@ -2,40 +2,31 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${SITE_TITLE} | Frontend Engineer`,
+  description = SITE_DESCRIPTION,
+} = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={description} />
   </head>
   <body
-    class="flex flex-col w-full dark:bg-[color:var(--darkmode-color)] dark:text-white h-full"
+    class="flex min-h-screen w-full flex-col bg-[#f5f5f5] text-base dark:bg-[color:var(--darkmode-color)] dark:text-white"
   >
-    <div class="fixed inset-0 flex justify-center">
-      <div class="flex w-full max-w-7xl lg:px-8">
-        <div
-          class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
-        >
-        </div>
-      </div>
-    </div>
-    <!-- Header -->
-    <Header title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <!-- Main -->
-    <main class="flex flex-col w-full relative">
+    <Header />
+    <main class="flex w-full flex-1 flex-col">
       <slot />
     </main>
     <Footer />
-    <script defer>
-      var form = document.querySelector(".pageclip-form");
-      window.Pageclip.form(form, {
-        successTemplate: "<span>stop</span>",
-      });
-    </script>
-    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
   </body>
 </html>

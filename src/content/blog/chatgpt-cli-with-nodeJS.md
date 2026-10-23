@@ -15,7 +15,7 @@ Open up a new folder for development, I called mine gpt-cli
 
 1. In your folder Run `npm init -y` this will create your `package.json` file the `-y` just says yes to the default configuration for your `package.json`
 
-   1. In the package.json file let's make sure we can use ES modules and add `"type" : "module"`. To learn more about ES modules, see [here](https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling). Your package.json should now look like the code below
+   1. In the package.json file let's make sure we can use ES modules and add `"type" : "module"`. To learn more about ES modules, see the [Node.js ES modules documentation](https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling). Your package.json should now look like the code below
 
       ```json
       {
@@ -116,10 +116,10 @@ Open up a new folder for development, I called mine gpt-cli
 
       The history array will give GPT its behavior in this case it is an AI assistant, it will also be where we push all the current and previous responses :)
 
-   2. We also have a recursive function called `start()` where we check if the user has inputted the word `exit` if the user has, then we close the interface we MUST close it as the `readline.interface` will wait for data to be received on the `input` stream. Learn more [here](https://nodejs.org/api/readline.html#readline).
+   2. We also have a recursive function called `start()` where we check if the user has inputted the word `exit` if the user has, then we close the interface we MUST close it as the `readline.interface` will wait for data to be received on the `input` stream. Learn more in the [Node.js readline documentation](https://nodejs.org/api/readline.html#readline).
    3. We read the user input with a readline, then we format the message and pass the history of the conversation we also pass the `userMessage` where we wait for GPT's response. We push the response to the history array to make sure we keep track of the conversation.
 
-8. Finally, get your Openai key from [here](https://platform.openai.com/api-keys) and run the following command in your terminal
+8. Finally, get your Openai key from the [OpenAI API keys page](https://platform.openai.com/api-keys) and run the following command in your terminal
 
    1. `export OPENAI_API_KEY="your api key"`
    2. This will add the key to your `.env` in your computer and allow node to read from it
@@ -150,7 +150,7 @@ Open up a new folder for development, I called mine gpt-cli
 
 9. Now in your terminal run `npm i -g` this will download your code as an npm package. Congratulations you now have a working CLI that you can run anywhere from within your terminal by running `chatgpt`.
 
-### The code
+## The code
 
 ```javascript
 #! /usr/bin/env node

@@ -7,7 +7,7 @@ heroImage: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/wX2L8L-fGe
 
 There are two ways to host a website on github one way is to give a special name for your github repository another way is to create a branch in your github repo named `gh-pages`.
 
-### First I will show you how host your website by giving your repository a special name.
+## First I will show you how host your website by giving your repository a special name.
 
 Create a github account if you don't have one already and navigate to the repositories tab
 
@@ -22,11 +22,11 @@ Note: If the first part of your repository name doesn’t exactly match your use
 
 Now you can upload a .html or .pdf or even a .md file and github will automatically host it (it may take a minute or two until its fully live). So for example if you added a `index.html` file then the URL would be `<user>.github.io/index.html`
 
-### Secondly, I will show you how host your website by giving your repository a special branch name `gh-pages`.
+## Secondly, I will show you how host your website by giving your repository a special branch name `gh-pages`.
 
 This does require more knowledge of how [git](https://git-scm.com/) works. I will go step by step in order on how to accomplish this using gits cli.
 
-You'll need to install git if you don't have it already learn how to install git for mac [here](https://git-scm.com/download/mac) and for windows [here](https://git-scm.com/download/win) and others [here](https://git-scm.com/downloads).
+You'll need to install git if you don't have it already learn how to install git for mac in the [Git for macOS download](https://git-scm.com/download/mac) and for windows in the [Git for Windows download](https://git-scm.com/download/win) and others on the [Git downloads page](https://git-scm.com/downloads).
 
 For this process you'll also want to have a github repository created so go ahead and do that you can call it whatever you like.
 
