@@ -3,7 +3,7 @@ import HeaderLink from "./HeaderLink.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<nav>
+<nav aria-label="Primary">
   <div class="relative flex h-16 items-center justify-between">
     <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
       <!-- Mobile menu button-->
@@ -15,7 +15,7 @@ import ThemeToggle from "./ThemeToggle.astro";
         aria-expanded="false"
       >
         <span class="absolute -inset-0.5"></span>
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only" id="mobile-menu-label">Open main menu</span>
         <!--
               Icon when menu is closed.
   
@@ -75,24 +75,33 @@ import ThemeToggle from "./ThemeToggle.astro";
 </nav>
 
 <!-- Mobile menu, show/hide based on menu state. -->
-<div class="sm:hidden hidden" id="mobile-menu">
+<nav class="sm:hidden hidden" id="mobile-menu" aria-label="Mobile">
   <div class="space-y-1 px-2 pb-3 pt-2">
     <HeaderLink href="/">Me</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
+    <HeaderLink href="/projects">Projects</HeaderLink>
   </div>
-</div>
+</nav>
 
 <script is:inline>
-  document
-    .querySelector("#mobile-menu-button")
-    ?.addEventListener("click", toggleMenu);
+  const menuButton = document.querySelector("#mobile-menu-button");
   const menuItems = document.querySelector("#mobile-menu");
   const ham = document.querySelector("#ham");
   const x = document.querySelector("#x");
+  const menuLabel = document.querySelector("#mobile-menu-label");
+
+  menuButton?.addEventListener("click", toggleMenu);
 
   function toggleMenu() {
     menuItems?.classList.toggle("hidden");
     x?.classList.toggle("hidden");
     ham?.classList.toggle("hidden");
+    const expanded = menuItems
+      ? !menuItems.classList.contains("hidden")
+      : false;
+    menuButton?.setAttribute("aria-expanded", String(expanded));
+    if (menuLabel) {
+      menuLabel.textContent = expanded ? "Close main menu" : "Open main menu";
+    }
   }
 </script>

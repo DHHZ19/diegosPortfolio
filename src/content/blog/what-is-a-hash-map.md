@@ -19,7 +19,7 @@ The image below shows how a name for a phone book gets "hashed" and assigned a n
 
 In Javascript, hash tables are usually implemented with an object but you can also use a [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) or [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/set).
 
-### So why Care?
+## So why Care?
 
 Hash Maps have come up a lot in coding interview challenges, are in file systems, password verification, and even compilers.
 

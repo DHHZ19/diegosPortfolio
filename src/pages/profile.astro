@@ -2,6 +2,7 @@
 import MySiteLayout from "../layouts/IndexLayout.astro";
 import { Image } from "astro:assets";
 import { SITE_TITLE } from "../consts";
+import avatar from "../assets/profilepic.png";
 
 const PAGE_TITLE = "Profile";
 const LINKS = [
@@ -13,15 +14,16 @@ const LINKS = [
 ];
 ---
 
-<MySiteLayout title={PAGE_TITLE}>
+<MySiteLayout title={`${PAGE_TITLE} | ${SITE_TITLE}`}>
   <main class="min-h-screen flex flex-col items-center justify-start py-20">
     <Image
-      src="/profilepic.png"
-      alt="diego"
-      class="rounded-full object-cover border-2 border-purple-600"
-      width={120}
-      height={120}
+      src={avatar}
+      alt="Portrait of Diego Hernandez"
+      class="h-24 w-24 rounded-full border-2 border-purple-600 object-cover"
+      width={192}
+      height={192}
       loading="eager"
+      decoding="async"
     />
 
     <h1 class="mt-4 text-2xl font-bold">{SITE_TITLE}</h1>

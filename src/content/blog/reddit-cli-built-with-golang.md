@@ -5,7 +5,7 @@ pubDate: 3 19 2024
 heroImage: https://www.diegohdev.com/golang.png
 ---
 
-**Overview:** You will learn how to get json data form the reddit api and open the Reddit post in your default web browser.
+**Overview:** You will learn how to get json data from the reddit api and open the Reddit post in your default web browser.
 
 **Prerequisites:**
 
@@ -184,4 +184,4 @@ now you should be able to run `reddit` in you cli and it will run the program in
 
 run `go run main.go`
 
-All done! View the full source code [here](https://github.com/DHHZ19/goRedditCLI/blob/main/main.go).
+All done! View the full source code in the [goRedditCLI repository](https://github.com/DHHZ19/goRedditCLI/blob/main/main.go).

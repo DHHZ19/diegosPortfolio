@@ -7,11 +7,11 @@ heroImage: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/WUmb_eBrpj
 
 **Dependencies**:
 
-- Node.js / Astro.js ( if you don't have node follow this [guide](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/) to get it installed. Astro will be installed later in this artcile)
+- Node.js / Astro.js ( if you don't have node follow this [guide](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/) to get it installed. Astro will be installed later in this article)
 - [Facebook developer account](https://developers.facebook.com/)
 - Access to an Instagram account
 
-# To create a web app that displays Instagram media posts, you can use **AstroJS**, a modern web framework that is easy to learn and use. Here are the steps:
+To create a web app that displays Instagram media posts, you can use **AstroJS**, a modern web framework that is easy to learn and use. Here are the steps:
 
 1. First, you need to create an Facebook developer account and register your app to get an access token. You can follow the instructions provided in the [official Facebook](https://developers.facebook.com/docs/development/create-an-app) developer documentation to do this or follow along here.
 

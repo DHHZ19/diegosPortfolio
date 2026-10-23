@@ -5,7 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
-import { Image } from "astro:assets";
+import PostCover from "../../components/PostCover.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -14,87 +14,52 @@ const posts = (await getCollection("blog")).sort(
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
     <style>
       ul li :global(time) {
-        flex: 0 0 130px;
         font-style: italic;
-        color: #595959;
+        color: #3f3f46;
       }
-      ul li a:visited span,
-      ul li a:visited svg {
-        color: #8e32dc;
-        stroke: #8e32dc;
+      :global(html.dark) ul li :global(time) {
+        color: #d4d4d8;
       }
     </style>
   </head>
   <body
-    class="w-full dark:bg-[color:var(--darkmode-color)] dark:text-white h-full"
+    class="min-h-screen w-full bg-[#f5f5f5] text-base dark:bg-[color:var(--darkmode-color)] dark:text-white"
   >
     <Header />
     <main class="w-full">
-      <div class="sm:px-8">
-        <div class="mx-auto w-full max-w-7xl lg:px-8">
-          <div class="relative px-4 sm:px-8 lg:px-52">
-            <div class="mx-auto max-w-2xl lg:max-w-5xl">
-              <header class="max-w-2xl">
-                <h1
-                  class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
-                >
-                  Writing on software development, begineer friendly.
-                </h1><p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-                  Tutorials on projects like AI, Web development, backend
-                  development. As well as explanations on concepts like data
-                  structures & algorthims all collected in chronological order.
-                </p>
-              </header>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section class="border-t-stone-400 border-t solid mt-4 px-4">
-        <ul class="md:flex md:flex-col md:justify-center md:items-center">
+      <header class="mx-auto w-full max-w-3xl px-5 pt-8">
+        <h1 class="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 md:text-[2.375rem] md:leading-tight">
+          Writing on software development, beginner friendly.
+        </h1>
+        <p class="mt-6 text-lg text-zinc-700 dark:text-zinc-300">
+          Tutorials on projects like AI, Web development, backend
+          development. As well as explanations on concepts like data
+          structures & algorithms all collected in chronological order.
+        </p>
+      </header>
+      <section class="mx-auto mt-12 w-full max-w-3xl border-t border-stone-300 px-5 pt-2">
+        <ul class="flex flex-col">
           {
-            posts.map((post, idx) => (
-              <li class="hover:bg-neutral-200 rounded-lg dark:hover:bg-neutral-800 md:w-2/3 md:flex md:flex-row flex-col justify-center align-middle max-w-3xl mt-12">
-                <FormattedDate date={post.data.pubDate} />
-
-                <a href={`/blog/${post.slug}/`} class="w-full py-2">
-                  {post.data.heroImage ? (
-                    <Image
-                      class="w-56 pl-2 py-2"
-                      width="224"
-                      height="224"
-                      src={post.data.heroImage}
-                      loading={idx < 2 ? "eager" : "lazy"}
-                      alt=""
-                    />
-                  ) : (
-                    ""
-                  )}
-                  <h3 class="pl-2 pt-1 font-bold">{post.data.title}</h3>
-                  <p class="p-2 text-sm text-neutral-600 dark:text-neutral-400">
+            posts.map((post) => (
+              <li class="mt-8">
+                <article>
+                  <FormattedDate date={post.data.pubDate} />
+                  <h2 class="mt-2 text-xl font-bold leading-snug">
+                    <a
+                      href={`/blog/${post.id}/`}
+                      class="rounded-sm hover:text-purple-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+                    >
+                      {post.data.title}
+                    </a>
+                  </h2>
+                  <PostCover title={post.data.title} class="mt-3 w-full rounded-xl" />
+                  <p class="mt-3 text-base text-neutral-700 dark:text-neutral-300">
                     {post.data.description}
                   </p>
-                  <span class="pl-2">
-                    Read More
-                    <svg
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      class="inline-block stroke-slate-50"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6 12H18M18 12L13 7M18 12L13 17"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>{" "}
-                  </span>
-                </a>
+                </article>
               </li>
             ))
           }
