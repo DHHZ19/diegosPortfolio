@@ -2,6 +2,7 @@
 title: "Understanding Insertion Sort for beginners"
 description: "A beginners guide to insertion sort"
 pubDate: "9 16 2022"
+heroImage: https://www.diegohdev.com/insertion-sort.png
 ---
 
 ## How to solve Insertion Sort for beginners in JS
