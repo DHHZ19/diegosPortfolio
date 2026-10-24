@@ -1,14 +1,51 @@
 ---
-import MySiteLayout from "../layouts/IndexLayout.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../components/ProjectCard.astro";
 import { SITE_ROLE, SITE_TITLE } from "../consts";
+import MySiteLayout from "../layouts/IndexLayout.astro";
 
-const PAGE_TITLE = "Projects";
+const description =
+  "Each project: the problem, what I built, and the stack, with links to the live site and code.";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) =>
+    a.data.order - b.data.order || a.data.title.localeCompare(b.data.title),
+);
 ---
 
-<MySiteLayout title={`${PAGE_TITLE} | ${SITE_TITLE} | ${SITE_ROLE}`}>
+<MySiteLayout
+  title={`Projects | ${SITE_TITLE} | ${SITE_ROLE}`}
+  description={description}
+>
+  <header class="mx-auto w-full max-w-2xl px-5 pt-8 text-center">
+    <p
+      class="text-sm font-semibold uppercase tracking-[0.2em] text-lime-700 dark:text-lime-500"
+    >
+      Projects
+    </p>
+    <h1
+      class="mt-2 text-balance text-3xl font-extrabold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl"
+    >
+      Things I've built and shipped.
+    </h1>
+    <p
+      class="mx-auto mt-4 max-w-xl text-pretty text-lg text-zinc-600 dark:text-zinc-300"
+    >
+      {description}
+    </p>
+  </header>
   <section
-    class="mx-auto w-full max-w-7xl px-5 text-center md:pl-5 md:text-left lg:px-12"
+    class="mx-auto mt-10 w-full max-w-5xl border-t border-stone-300 px-5 pt-10 dark:border-zinc-700"
+    aria-label="Case studies"
   >
-    <h1 class="font-normal">{PAGE_TITLE}, coming soon</h1>
+    <ul class="flex flex-col gap-20">
+      {
+        projects.map((project, index) => (
+          <li>
+            <ProjectCard project={project} index={index} />
+          </li>
+        ))
+      }
+    </ul>
   </section>
 </MySiteLayout>

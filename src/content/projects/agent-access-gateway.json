@@ -1,0 +1,15 @@
+{
+  "title": "Agent Access Gateway",
+  "category": "AI + Security",
+  "problem": "AI agents need access to real tools and data, and that access has to be managed.",
+  "whatIBuilt": "Planning the MVP now. This page will track it as it ships.",
+  "stack": "Stack TBD",
+  "order": 1,
+  "cover": {
+    "kind": "gateway",
+    "line": "agent → [ gateway ] → tools",
+    "caption": "// access, managed",
+    "badge": "Coming soon"
+  },
+  "links": []
+}
