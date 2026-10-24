@@ -1,7 +1,7 @@
 ---
 import MySiteLayout from "../layouts/IndexLayout.astro";
 import { Image } from "astro:assets";
-import { SITE_TITLE } from "../consts";
+import { SITE_ROLE, SITE_TITLE } from "../consts";
 import avatar from "../assets/profilepic.png";
 
 const PAGE_TITLE = "Profile";
@@ -14,7 +14,7 @@ const LINKS = [
 ];
 ---
 
-<MySiteLayout title={`${PAGE_TITLE} | ${SITE_TITLE}`}>
+<MySiteLayout title={`${PAGE_TITLE} | ${SITE_TITLE} | ${SITE_ROLE}`}>
   <main class="min-h-screen flex flex-col items-center justify-start py-20">
     <Image
       src={avatar}
@@ -28,7 +28,7 @@ const LINKS = [
 
     <h1 class="mt-4 text-2xl font-bold">{SITE_TITLE}</h1>
     <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">
-      Software Engineer
+      {SITE_ROLE}
     </p>
 
     <div

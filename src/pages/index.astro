@@ -1,13 +1,13 @@
 ---
 import MySiteLayout from "../layouts/IndexLayout.astro";
 import { Image } from "astro:assets";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { SITE_DESCRIPTION, SITE_ROLE, SITE_TITLE } from "../consts";
 import SocialLinks from "../components/SocialLinks.astro";
 import avatar from "../assets/profilepic.png";
 ---
 
 <MySiteLayout
-  title={`${SITE_TITLE} | Frontend Engineer`}
+  title={`${SITE_TITLE} | ${SITE_ROLE}`}
   description={SITE_DESCRIPTION}
 >
   <section class="mx-auto w-full max-w-3xl px-5 pb-2 pt-8 lg:px-12">
@@ -22,12 +22,14 @@ import avatar from "../assets/profilepic.png";
         decoding="async"
       />
       <div class="min-w-0">
-        <h1 class="text-3xl font-bold tracking-tight md:text-[2.375rem] md:leading-tight">
-          {SITE_TITLE}, Software Engineer
+        <h1
+          class="text-3xl font-bold tracking-tight md:text-[2.375rem] md:leading-tight"
+        >
+          {SITE_TITLE}, {SITE_ROLE}
         </h1>
         <p class="mt-4 max-w-xl text-lg tracking-tight">
-          Loves problem solving, always seeking new challenges, outdoors enjoyer.
-          I share my development journey through <a
+          Loves problem solving, always seeking new challenges, outdoors
+          enjoyer. I share my development journey through <a
             class="font-semibold underline decoration-purple-600 hover:[text-shadow:0_0_5px_#ffffff]"
             href="https://www.diegohdev.com/blog/">technical articles</a
           > and projects.
