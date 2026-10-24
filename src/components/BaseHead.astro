@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { SITE_DESCRIPTION, SITE_ROLE, SITE_TITLE } from "../consts";
+import { SITE_ROLE, SITE_TITLE } from "../consts";
 
 export interface Props {
   title: string;
@@ -45,7 +45,6 @@ const rssURL = new URL("/rss.xml", Astro.site);
 <meta name="generator" content={Astro.generator} />
 
 <link rel="canonical" href={canonicalURL} />
-<link rel="manifest" href="/favicon_io/site.webmanifest" />
 
 <title>{title}</title>
 <meta name="title" content={title} />
@@ -67,14 +66,3 @@ const rssURL = new URL("/rss.xml", Astro.site);
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={socialImage} />
 <meta name="twitter:image:alt" content={`${SITE_TITLE}, ${SITE_ROLE}`} />
-<script
-  type="application/ld+json"
-  set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: SITE_TITLE,
-    jobTitle: SITE_ROLE,
-    url: Astro.site?.href ?? "https://www.diegohdev.com/",
-    description: SITE_DESCRIPTION,
-  })}
-/>
