@@ -4,6 +4,7 @@ import githubPages from "../assets/blog/github-pages.jpeg";
 import gitlogs from "../assets/blog/gitlogs.jpg";
 import golang from "../assets/blog/golang.jpg";
 import hashMap from "../assets/blog/hash-map.jpeg";
+import insertionSort from "../assets/blog/insertion-sort.png";
 import instagram from "../assets/blog/instagram.jpeg";
 
 const covers: Record<string, ImageMetadata> = {
@@ -17,6 +18,7 @@ const covers: Record<string, ImageMetadata> = {
     chatgpt,
   "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/WUmb_eBrpjs/upload/d8ffd839cfca7e18bcccd8eceedbc66d.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp":
     instagram,
+  "https://www.diegohdev.com/insertion-sort.png": insertionSort,
 };
 
 export function coverFor(src?: string): ImageMetadata | undefined {
