@@ -53,34 +53,19 @@ const posts = (await getCollection("blog")).sort(
             posts.map((post, idx) => {
               const cover = coverFor(post.data.heroImage);
               return (
-                <li
-                  class:list={[
-                    "mt-12 w-full max-w-3xl md:flex md:w-2/3 md:flex-row md:flex-nowrap md:items-start md:justify-center md:gap-x-0",
-                    cover
-                      ? "flex flex-col items-start min-[355px]:grid min-[355px]:grid-cols-[max-content_14rem] min-[355px]:justify-start min-[355px]:gap-x-2"
-                      : "flex flex-row flex-wrap items-start gap-x-2",
-                  ]}
-                >
+                <li class="mt-12 flex w-full max-w-3xl flex-col items-start md:w-2/3 md:flex-row md:flex-nowrap md:items-start md:justify-center">
                   <FormattedDate
-                    class:list={[
-                      "shrink-0 whitespace-nowrap",
-                      cover &&
-                        "min-[355px]:col-start-1 min-[355px]:row-start-1 min-[355px]:self-center md:col-auto md:row-auto md:self-start",
-                    ]}
+                    class="pl-2 md:shrink-0 md:whitespace-nowrap md:pl-0"
                     date={post.data.pubDate}
                   />
                   <a
                     href={`/blog/${post.id}/`}
-                    class:list={[
-                      "w-56 rounded-sm py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 md:w-full",
-                      cover &&
-                        "min-[355px]:col-start-2 min-[355px]:row-start-1 min-[355px]:row-span-3 min-[355px]:grid min-[355px]:grid-rows-subgrid min-[355px]:py-0 md:block md:py-2",
-                    ]}
+                    class="w-56 rounded-sm py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 md:w-full"
                   >
-                    <div class:list={["w-56", cover && "min-[355px]:contents md:block"]}>
+                    <div class="w-56">
                       {cover && (
                         <Image
-                          class="w-56 pl-2 py-2 min-[355px]:row-start-1 md:row-auto"
+                          class="w-56 pl-2 py-2"
                           src={cover}
                           width={cover.width}
                           height={cover.height}
@@ -89,20 +74,8 @@ const posts = (await getCollection("blog")).sort(
                           decoding="async"
                         />
                       )}
-                      <h2
-                        class:list={[
-                          "pl-2 pt-1 text-xl font-bold leading-snug",
-                          cover && "min-[355px]:row-start-2 md:row-auto",
-                        ]}
-                      >
-                        {post.data.title}
-                      </h2>
-                      <p
-                        class:list={[
-                          "p-2 text-base text-neutral-700 dark:text-neutral-300",
-                          cover && "min-[355px]:row-start-3 md:row-auto",
-                        ]}
-                      >
+                      <h2 class="pl-2 pt-1 text-xl font-bold leading-snug">{post.data.title}</h2>
+                      <p class="p-2 text-base text-neutral-700 dark:text-neutral-300">
                         {post.data.description}
                       </p>
                     </div>
