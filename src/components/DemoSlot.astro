@@ -1,0 +1,60 @@
+---
+import { demoMedia } from "../lib/demo-video";
+
+interface Props {
+  src?: string;
+  poster?: string;
+  title: string;
+}
+
+const { src, poster, title } = Astro.props;
+const media = demoMedia(src);
+const frame =
+  "aspect-video w-full max-w-full rounded-2xl bg-zinc-900 ring-1 ring-zinc-700 dark:ring-zinc-500";
+---
+
+{
+  media?.type === "file" ? (
+    <video
+      class:list={[frame, "object-contain"]}
+      controls
+      playsinline
+      preload="metadata"
+      poster={poster}
+      aria-label={`Demo of ${title}`}
+    >
+      <source src={media.src} />
+    </video>
+  ) : media ? (
+    <div class:list={[frame, "overflow-hidden"]}>
+      <iframe
+        class="h-full w-full border-0"
+        src={media.src}
+        title={`Demo of ${title}`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"
+      />
+    </div>
+  ) : (
+    <div
+      class:list={[frame, "relative overflow-hidden"]}
+      role="img"
+      aria-label="Demo video coming soon"
+    >
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
+        <span
+          class="grid h-14 w-14 place-items-center rounded-full bg-lime-400 text-zinc-900"
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 24 24" class="ml-0.5 h-7 w-7 fill-current">
+            <path d="M8.5 6.8v10.4L18 12 8.5 6.8z" />
+          </svg>
+        </span>
+        <p class="text-balance text-sm font-semibold uppercase tracking-widest text-zinc-100">
+          Demo video coming soon
+        </p>
+      </div>
+    </div>
+  )
+}

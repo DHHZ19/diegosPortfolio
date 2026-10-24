@@ -49,6 +49,12 @@ const projects = defineCollection({
       }),
     ]),
     links: z.array(projectLink).default([]),
+    demoVideo: z
+      .object({
+        src: z.string(),
+        poster: z.string().optional(),
+      })
+      .optional(),
   }),
 });
 
