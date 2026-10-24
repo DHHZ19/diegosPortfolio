@@ -1,11 +1,14 @@
 ---
 import MySiteLayout from "../layouts/IndexLayout.astro";
+import { SITE_ROLE, SITE_TITLE } from "../consts";
 
 const PAGE_TITLE = "Projects";
 ---
 
-<MySiteLayout title={`${PAGE_TITLE} | Diego Hernandez`}>
-  <section class="mx-auto w-full max-w-7xl px-5 text-center md:pl-5 md:text-left lg:px-12">
+<MySiteLayout title={`${PAGE_TITLE} | ${SITE_TITLE} | ${SITE_ROLE}`}>
+  <section
+    class="mx-auto w-full max-w-7xl px-5 text-center md:pl-5 md:text-left lg:px-12"
+  >
     <h1 class="font-normal">{PAGE_TITLE}, coming soon</h1>
   </section>
 </MySiteLayout>

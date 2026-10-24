@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { SITE_DESCRIPTION, SITE_ROLE, SITE_TITLE } from "../consts";
 
 interface Props {
   title?: string;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const {
-  title = `${SITE_TITLE} | Frontend Engineer`,
+  title = `${SITE_TITLE} | ${SITE_ROLE}`,
   description = SITE_DESCRIPTION,
 } = Astro.props;
 ---

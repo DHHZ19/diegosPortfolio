@@ -1,0 +1,7 @@
+# Diego Hernandez
+
+Diego Hernandez is a Software Engineer. He builds React and TypeScript interfaces for security and AI products.
+
+- [Home](https://www.diegohdev.com/): Software Engineer
+- [Blog](https://www.diegohdev.com/blog/)
+- [Projects](https://www.diegohdev.com/projects/)
