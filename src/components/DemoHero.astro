@@ -1,0 +1,117 @@
+---
+import { demoMedia } from "../lib/demo-video";
+
+interface Props {
+  src: string;
+  poster: string;
+  title: string;
+  captions?: {
+    src: string;
+    srclang?: string;
+    label?: string;
+  };
+}
+
+const { src, poster, title, captions } = Astro.props;
+const media = demoMedia(src);
+---
+
+{
+  media && (
+    <div
+      class="relative aspect-video w-full min-w-0 overflow-hidden rounded-2xl bg-zinc-900 ring-1 ring-black/5 dark:ring-white/10"
+      data-demo-root
+      data-kind={media.type}
+      data-media-src={media.src}
+      data-poster={poster}
+      data-demo-title={title}
+      data-captions={captions?.src}
+      data-captions-lang={captions?.srclang}
+      data-captions-label={captions?.label}
+    >
+      <button
+        type="button"
+        class="group absolute inset-0 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+        aria-label={`Play demo: ${title}`}
+      >
+        <img
+          src={poster}
+          alt=""
+          width="1280"
+          height="720"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+        <span class="absolute inset-0 bg-black/10" aria-hidden="true" />
+        <span
+          class="absolute inset-0 grid place-items-center"
+          aria-hidden="true"
+        >
+          <span class="grid h-14 w-14 place-items-center rounded-full bg-lime-400 text-zinc-900 shadow-[0_8px_24px_rgb(0_0_0/0.35)]">
+            <svg viewBox="0 0 24 24" class="ml-0.5 h-7 w-7 fill-current">
+              <path d="M8.5 6.8v10.4L18 12 8.5 6.8z" />
+            </svg>
+          </span>
+        </span>
+        <span class="absolute bottom-3 left-3 rounded-full bg-zinc-950/75 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
+          Watch demo
+        </span>
+      </button>
+    </div>
+  )
+}
+
+<script>
+  function mountPlayer(root: HTMLElement) {
+    const kind = root.dataset.kind;
+    const src = root.dataset.mediaSrc;
+    const poster = root.dataset.poster ?? "";
+    const title = root.dataset.demoTitle || "Demo video";
+    if (!src || !kind) return;
+
+    root.replaceChildren();
+
+    if (kind === "file") {
+      const video = document.createElement("video");
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "none";
+      video.poster = poster;
+      video.className = "h-full w-full bg-black object-contain";
+      video.setAttribute("aria-label", title);
+      const source = document.createElement("source");
+      source.src = src;
+      video.append(source);
+      const captions = root.dataset.captions;
+      if (captions) {
+        const track = document.createElement("track");
+        track.kind = "captions";
+        track.src = captions;
+        track.srclang = root.dataset.captionsLang || "en";
+        track.label = root.dataset.captionsLabel || "English";
+        track.default = true;
+        video.append(track);
+      }
+      root.append(video);
+      video.play().catch(() => {});
+      return;
+    }
+
+    const iframe = document.createElement("iframe");
+    const url = new URL(src);
+    url.searchParams.set("autoplay", "1");
+    iframe.src = url.toString();
+    iframe.title = title;
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.className = "h-full w-full border-0";
+    root.append(iframe);
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-demo-root]").forEach((root) => {
+    root.querySelector("button")?.addEventListener("click", () => {
+      mountPlayer(root);
+    });
+  });
+</script>

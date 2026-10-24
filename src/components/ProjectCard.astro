@@ -2,8 +2,9 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { projectImage } from "../lib/project-images";
-import DemoSlot from "./DemoSlot.astro";
+import DemoHero from "./DemoHero.astro";
 import GatewayCover from "./GatewayCover.astro";
+import { demoMedia } from "../lib/demo-video";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -13,8 +14,8 @@ interface Props {
 const { project, index } = Astro.props;
 const { title, category, problem, whatIBuilt, stack, status, cover, links } =
   project.data;
-const demoSrc = project.data.demoVideo?.src;
-const demoPoster = project.data.demoVideo?.poster;
+const demo = project.data.demoVideo;
+const demoReady = Boolean(demo && demoMedia(demo.src));
 const headingId = project.id;
 const image = cover.kind === "image" ? projectImage(cover.src) : undefined;
 
@@ -33,113 +34,108 @@ const linkClass = {
 ---
 
 <article
-  class="flex min-w-0 flex-col gap-8 md:gap-10"
+  class:list={[
+    "grid min-w-0 items-center gap-6 md:grid-cols-2 md:gap-12",
+    index % 2 === 1 && "md:[&>*:first-child]:order-2",
+  ]}
   aria-labelledby={headingId}
 >
-  <div
-    class:list={[
-      "grid min-w-0 items-center gap-6 md:grid-cols-2 md:gap-12",
-      index % 2 === 1 && "md:[&>*:first-child]:order-2",
-    ]}
-  >
-    {
-      cover.kind === "gateway" ? (
-        <GatewayCover
-          line={cover.line}
-          caption={cover.caption}
-          badge={cover.badge}
-          label={`Illustration for ${title}`}
+  {
+    demo && demoReady ? (
+      <DemoHero
+        src={demo.src}
+        poster={demo.poster}
+        title={demo.title ?? title}
+        captions={demo.captions}
+      />
+    ) : cover.kind === "gateway" ? (
+      <GatewayCover
+        line={cover.line}
+        caption={cover.caption}
+        badge={cover.badge}
+        label={`Illustration for ${title}`}
+      />
+    ) : (
+      image && (
+        <Image
+          src={image}
+          alt={cover.alt}
+          width={1280}
+          height={720}
+          class="aspect-video w-full min-w-0 rounded-2xl object-cover object-top ring-1 ring-black/5 dark:ring-white/10"
+          loading={index === 0 ? "eager" : "lazy"}
+          decoding="async"
         />
-      ) : (
-        image && (
-          <Image
-            src={image}
-            alt={cover.alt}
-            width={1280}
-            height={720}
-            class="aspect-video w-full min-w-0 rounded-2xl object-cover object-top ring-1 ring-black/5 dark:ring-white/10"
-            loading={index === 0 ? "eager" : "lazy"}
-            decoding="async"
-          />
-        )
+      )
+    )
+  }
+  <div class="min-w-0 text-center md:text-left">
+    <p
+      class="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
+    >
+      {category}
+    </p>
+    <h2
+      id={headingId}
+      class="mt-1 text-balance text-[1.75rem] font-bold leading-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl"
+    >
+      {title}
+    </h2>
+    <dl class="mx-auto mt-5 max-w-md space-y-4 text-left md:mx-0">
+      <div class="border-l-4 border-lime-700 pl-4 dark:border-lime-500">
+        <dt
+          class="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
+        >
+          Problem
+        </dt>
+        <dd class="mt-1 text-lg text-zinc-800 dark:text-zinc-200">
+          {problem}
+        </dd>
+      </div>
+      <div class="border-l-4 border-stone-300 pl-4 dark:border-zinc-700">
+        <dt
+          class="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
+        >
+          What I built
+        </dt>
+        <dd class="mt-1 text-lg text-zinc-800 dark:text-zinc-200">
+          {whatIBuilt}
+        </dd>
+      </div>
+      <div class="border-l-4 border-stone-300 pl-4 dark:border-zinc-700">
+        <dt
+          class="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
+        >
+          Stack
+        </dt>
+        <dd class="mt-1 text-lg text-zinc-800 dark:text-zinc-200">{stack}</dd>
+      </div>
+    </dl>
+    {
+      links.length > 0 && (
+        <div class="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+          {links.map((link) => {
+            const external = /^https?:\/\//.test(link.href);
+            return (
+              <a
+                href={link.href}
+                class={linkClass[link.style]}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+        </div>
       )
     }
-    <div class="min-w-0 text-center md:text-left">
-      <p
-        class="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
-      >
-        {category}
-      </p>
-      <h2
-        id={headingId}
-        class="mt-1 text-balance text-[1.75rem] font-bold leading-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl"
-      >
-        {title}
-      </h2>
-      <dl class="mx-auto mt-5 max-w-md space-y-4 text-left md:mx-0">
-        <div class="border-l-4 border-lime-700 pl-4 dark:border-lime-500">
-          <dt
-            class="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
-          >
-            Problem
-          </dt>
-          <dd class="mt-1 text-lg text-zinc-800 dark:text-zinc-200">
-            {problem}
-          </dd>
-        </div>
-        <div class="border-l-4 border-stone-300 pl-4 dark:border-zinc-700">
-          <dt
-            class="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
-          >
-            What I built
-          </dt>
-          <dd class="mt-1 text-lg text-zinc-800 dark:text-zinc-200">
-            {whatIBuilt}
-          </dd>
-        </div>
-        <div class="border-l-4 border-stone-300 pl-4 dark:border-zinc-700">
-          <dt
-            class="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
-          >
-            Stack
-          </dt>
-          <dd class="mt-1 text-lg text-zinc-800 dark:text-zinc-200">{stack}</dd>
-        </div>
-      </dl>
-      {
-        links.length > 0 && (
-          <div class="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
-            {links.map((link) => {
-              const external = /^https?:\/\//.test(link.href);
-              return (
-                <a
-                  href={link.href}
-                  class={linkClass[link.style]}
-                  target={external ? "_blank" : undefined}
-                  rel={external ? "noopener noreferrer" : undefined}
-                >
-                  {link.label}
-                </a>
-              );
-            })}
-          </div>
-        )
-      }
-      {
-        status && (
-          <p class="mt-5 text-sm font-semibold uppercase tracking-widest text-lime-700 dark:text-lime-500">
-            {status}
-          </p>
-        )
-      }
-    </div>
+    {
+      status && (
+        <p class="mt-5 text-sm font-semibold uppercase tracking-widest text-lime-700 dark:text-lime-500">
+          {status}
+        </p>
+      )
+    }
   </div>
-  <figure class="min-w-0">
-    <figcaption
-      class="mb-3 text-center text-sm font-semibold uppercase tracking-widest text-lime-700 dark:text-lime-500 md:text-left"
-    >
-      Demo
-    </figcaption>
-    <DemoSlot src={demoSrc} poster={demoPoster} title={title} />
-  </figure>
 </article>

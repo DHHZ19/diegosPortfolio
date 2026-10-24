@@ -51,8 +51,16 @@ const projects = defineCollection({
     links: z.array(projectLink).default([]),
     demoVideo: z
       .object({
-        src: z.string(),
-        poster: z.string().optional(),
+        src: z.string().min(1),
+        poster: z.string().min(1),
+        title: z.string().optional(),
+        captions: z
+          .object({
+            src: z.string().min(1),
+            srclang: z.string().default("en"),
+            label: z.string().default("English"),
+          })
+          .optional(),
       })
       .optional(),
   }),
