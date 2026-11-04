@@ -15,7 +15,7 @@ Instructions: Write a function insertionSort which takes an array of integers as
 
 Insertion Sort is a quadratic algorithm meaning its O(n^2) making it a bad algorithm for production as it can cause performance issues. That being said I think its a nice algo to learn to practice solving coding interview questions.
 
-This algo is also known as destructive as it operates on the array that is passed in on the function.
+This algo is also known as in-place as it operates on the array that is passed in on the function.
 
 ## The code
 
@@ -83,13 +83,13 @@ The whole point or jist of Insertion sort is that we assume we have a sorted hal
 
 first iteration would look like the array above. We are choosing index zero to be sorted and assuming the right side is unsorted.
 
-`numberToInsert = array\[1\]` and `j = 0`
+`numberToInsert = array[1]` and `j = 0`
 
 In the for loop we ask if `array[j] > numberToInsert && j >= 0 // this is false`
 
 So we move out of the loop and insert, now 3 is part of the sorted array
 
-array\[1\] = numberToInsert;
+array[1] = numberToInsert;
 
 `[1,3|-1,5,6]`
 
@@ -97,7 +97,7 @@ array\[1\] = numberToInsert;
 
 `[1,3|-1,5,6]`
 
-Now `numberToInsert = array\[2\]` and `j = 1`
+Now `numberToInsert = array[2]` and `j = 1`
 
 #### First iteration of inner loop
 
@@ -105,9 +105,9 @@ Now `numberToInsert = array\[2\]` and `j = 1`
 
 We then ask if `array[1] > numberToInsert && j >= 0 // this is true`
 
-So we move array\[j\] one to the right
+So we move array[j] one to the right
 
-`[1, |3,5,6]` // notice array\[1\] is now _empty_
+`[1, |3,5,6]` // notice array[1] is now _empty_
 
 the -1 is on to with the `numberToInsert` variable.
 
@@ -115,9 +115,9 @@ the -1 is on to with the `numberToInsert` variable.
 
 We then ask if `array[0] > numberToInsert && j >= 0 // this is true`
 
-so we move to the array\[0\] to the right
+so we move to the array[0] to the right
 
-`[ ,1,3,5,6]` // notice array\[0\] is now empty
+`[ ,1,3,5,6]` // notice array[0] is now empty
 
 #### Third iteration of inner loop
 
@@ -131,7 +131,7 @@ we do the insertion
 
 ### Third iteration of outer loop
 
-Now `numberToInsert = array\[3\]` and `j = 2`
+Now `numberToInsert = array[3]` and `j = 2`
 
 #### First Iteration of inner loop
 
